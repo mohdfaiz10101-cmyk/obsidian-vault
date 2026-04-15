@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-15 13:26:07
+updated: 2026-04-15 13:36:07
 source: /home/charlie/.claude/projects/-home-charlie/memory/nixos-config.md
 ---
 
@@ -630,3 +630,14 @@ Roo Code 的配置分散在 **4 个不同位置**，这是问题的根源：
 | [`Gdk/UnscaledDPI`](home/charlie/.config/xsettingsd/xsettingsd.conf:1) | 98304 | 96 DPI |
 | [`gtk-xft-dpi`](home/charlie/.config/g
 - [2026-04-15] [RooCode-019d8c37] 用户反馈还要求增大 KDE 缩放到 1.25x。更新 [`kwinoutputconfig.json`](home/charlie/.config/kwinoutputconfig.json:35)：
+
+### 2026-04-15 [Opus] 终端工具扩展 — Ghostty + WezTerm
+- **packages.nix 终端区块新增**：`ghostty` (1.3.1) + `wezterm` (0-unstable-2026-03-31)
+- 原有终端：warp-terminal、kitty、zellij
+- Ghostty 使用 GTK4/libadwaita 渲染，NVIDIA Wayland 下正常工作
+- 用途：OpenCode 等 AI CLI 工具推荐使用现代终端（Ghostty/WezTerm 比 Konsole 协议支持更好）
+
+### 2026-04-15 [Opus] Dolphin 存储设备免认证
+- **storage.nix 新增**：polkit 规则允许 `users` 组无密码挂载/卸载/弹出/解锁设备
+- 覆盖操作：`filesystem-mount` / `filesystem-mount-system` / `mount-other-seat` / `unmount-others` / `encrypted-unlock` / `eject-media` / `power-off-drive`
+- 效果：Dolphin 侧边栏点击存储设备不再弹密码框
