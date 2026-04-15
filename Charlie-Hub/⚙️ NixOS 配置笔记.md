@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-15 12:05:52
+updated: 2026-04-15 12:15:53
 source: /home/charlie/.claude/projects/-home-charlie/memory/nixos-config.md
 ---
 
@@ -26,6 +26,13 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/nixos-config.md
 - win_c MFT 已用 `ntfsfix /dev/nvme0n1p4` 修复，统一切到 ntfs-3g
 - 三块 NTFS 全部 ntfsfix 修复：sdb4(POOL-A1)、sda1(POOL-B1)、nvme0n1p4(win_c)
 - **当前状态**：/mnt/data 临时用 ntfs3（lazy unmount 残留），重启后自动切 ntfs-3g
+
+### 2026-04-15 [Opus] 全局 oneshot 服务 TimeoutStartSec 防卡死
+- **修改文件**：`disk-pool.nix`、`auto-services.nix`、`services.nix`
+- 12 个 oneshot 服务从默认 infinity → 有限 timeout
+- 关键保护：disk-pool(60s)、ai-docker-delayed(900s)、fwupd-refresh(120s, mkForce)
+- home-backup: requires→wants mnt-data.mount（硬盘不在不阻塞 timer 触发）
+- 用户级 auto-fix-services.service 也添加 60s timeout
 
 ### 2026-04-11 [Sonnet] 平板USB代理自动切换 — NetworkManager Dispatcher
 - **新模块**：`/etc/nixos/modules/tablet-proxy.nix`（配置文件 5.7KB）

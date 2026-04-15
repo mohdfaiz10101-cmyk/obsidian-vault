@@ -2,15 +2,15 @@
 type: letta-memory
 agent: nixos-sysadmin
 agent_name: 🖥️ 系统管理
-synced_at: 2026-04-14T21:15:57.644937
+synced_at: 2026-04-15T12:19:45.800943
 tags: [letta, nixos-sysadmin, memory]
 ---
 
 # 🖥️ 系统管理 - 记忆同步
 
 ## 最后更新
-2026-04-14T21:15:57.644937
+2026-04-15T12:19:45.800943
 
 ## Core Memory
 
-❌ 错误: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+❌ 错误: HTTPConnectionPool(host='127.0.0.1', port=8283): Max retries exceeded with url: /agent/nixos-sysadmin/core-memory (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8283): Failed to establish a new connection: [Errno 111] Connection refused"))
