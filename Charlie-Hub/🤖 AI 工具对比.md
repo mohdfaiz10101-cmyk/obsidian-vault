@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-15 11:45:50
+updated: 2026-04-15 11:55:51
 source: /home/charlie/.claude/projects/-home-charlie/memory/ai-tools.md
 ---
 

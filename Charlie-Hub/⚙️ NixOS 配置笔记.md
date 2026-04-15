@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-15 11:45:50
+updated: 2026-04-15 11:55:51
 source: /home/charlie/.claude/projects/-home-charlie/memory/nixos-config.md
 ---
 
@@ -23,7 +23,9 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/nixos-config.md
 - `/mnt/data`：`ntfs3` → `ntfs-3g`（可拆卸 HDD，ntfs3 遇脏卷会卡死）
 - `/mnt/win_c`：保持 `ntfs3` + `ro,force`（NVMe 固定盘，ntfs-3g 因 MFT 损坏拒绝挂载）
 - disk-pool-mount.sh：POOL 盘优先 ntfs-3g（删除 ntfs3 fallback 链）
-- **注意**：Windows C 盘需在 Windows 下运行 `chkdsk /f` 修复 MFT 才能切换到 ntfs-3g
+- win_c MFT 已用 `ntfsfix /dev/nvme0n1p4` 修复，统一切到 ntfs-3g
+- 三块 NTFS 全部 ntfsfix 修复：sdb4(POOL-A1)、sda1(POOL-B1)、nvme0n1p4(win_c)
+- **当前状态**：/mnt/data 临时用 ntfs3（lazy unmount 残留），重启后自动切 ntfs-3g
 
 ### 2026-04-11 [Sonnet] 平板USB代理自动切换 — NetworkManager Dispatcher
 - **新模块**：`/etc/nixos/modules/tablet-proxy.nix`（配置文件 5.7KB）
