@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-15 23:09:42
+updated: 2026-04-15 23:19:43
 source: /home/charlie/.claude/projects/-home-charlie/memory/ai-tools.md
 ---
 
@@ -701,3 +701,26 @@ Claude 操作─┘           ↓
 - 代理: HTTP_PROXY=http://192.168.123.209:7890 (tiktoken 下载需要)
 - 数据卷: ~/.adalflow → /root/.adalflow
 - 功能: GitHub 仓库文档生成、代码库分析、Wiki 自动生成
+
+## Agent 指令合规性方案对比 (2026-04-15)
+
+### 问题
+CLAUDE.md 中 MUST 规则被反复跳过，"内部推理"设计导致执行无保障。
+
+### 社区方案调研结论
+| 方案 | 机制 | 合规率 | 适用场景 |
+|------|------|--------|---------|
+| CLAUDE.md 规则 | 纯指令 | ~70% | L1 基线 |
+| 强制输出标签 | `[TAG]` 格式约束 | ~85% | L2 当前方案 |
+| agent-ruler (bunx) | 编译 CLAUDE.md 为检查脚本 | ~90% | 多文件验证 |
+| claude-rule-enforcer | PreToolUse/PostToolUse hooks | ~95% | 写入拦截 |
+| Stop Hook (exit 2) | 会话结束前阻塞检查 | ~99% | L3 确定性 |
+
+### 已采纳（L2 强制输出）
+- 6 个协议改为强制输出标签：`[自检]` `[ARCH]` `[SKILL]` `[AUTO_SKILL]` `[PRE_EXPLORE]` `[POST_EXPLORE]`
+- 失败计数器：连续 3 次跳过 → 写入 lessons-learned
+
+### 待实现（L3 Hook 层）
+- **Stop Hook**：会话结束前检查是否有未写入 memory 的操作 → `exit 2` 阻塞
+- **PreToolUse Hook**：文件写入前检查是否执行了 `[PRE_GATE]` memory 搜索
+- 优先级：Stop Hook > PreToolUse Hook
