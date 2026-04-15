@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-15 14:16:44
+updated: 2026-04-15 14:27:08
 source: /home/charlie/.claude/projects/-home-charlie/memory/nixos-config.md
 ---
 
@@ -636,6 +636,16 @@ Roo Code 的配置分散在 **4 个不同位置**，这是问题的根源：
 - 原有终端：warp-terminal、kitty、zellij
 - Ghostty 使用 GTK4/libadwaita 渲染，NVIDIA Wayland 下正常工作
 - 用途：OpenCode 等 AI CLI 工具推荐使用现代终端（Ghostty/WezTerm 比 Konsole 协议支持更好）
+- Ghostty NVIDIA 修复：`GSK_RENDERER=ngl`，desktop 文件在 `~/.local/share/applications/com.mitchellh.ghostty.desktop`
+
+### 2026-04-15 [Opus] SDDM 自动重登录 + 根分区清理
+- **SDDM Relogin=true**：desktop.nix 新增，防止 KDE 崩溃后卡登录界面
+- **根分区清理**：91% → 84%，释放 6G。脚本 `~/launcher/disk-expand-phase1-cleanup.sh`
+- **LiveCD v2**：`~/nixos-livecd/iso.nix`，XFCE + GParted + Claude Code + 自动扩容脚本
+- **GParted 扩容方案**：
+  - 方案 A：删 p7(8.9G WinRE) → 根分区 +8.9G（推荐，1 分钟）
+  - 方案 B：删 p7+p1(21.8G) → 根分区 +30G（需移动分区，30 分钟）
+- **Ventoy USB**：sde (7.2G)，ISO 名 `nixos-charlie-toolkit.iso`
 
 ### 2026-04-15 [Opus] Dolphin 存储设备免认证
 - **storage.nix 新增**：polkit 规则允许 `users` 组无密码挂载/卸载/弹出/解锁设备
