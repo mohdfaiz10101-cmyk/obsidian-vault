@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-15 17:18:18
+updated: 2026-04-15 17:28:21
 source: /home/charlie/.claude/projects/-home-charlie/memory/ai-tools.md
 ---
 
@@ -632,13 +632,29 @@ Claude 操作─┘           ↓
 ## OpenCode AI（2026-04-13）
 
 - [2026-04-13] [Sonnet] **OpenCode 安装与配置**
-  - 已安装：`/home/charlie/.local/bin/opencode`
+  - 已安装：`/home/charlie/.local/bin/opencode` (v1.2.27)
   - 配置：`~/.config/opencode/opencode.json`
   - 灵魂文件：`~/.config/opencode/AGENTS.md`（从 CLAUDE.md 自动编译）
-  - Provider：Anthropic（默认）+ LiteLLM（DeepSeek V3.2、GLM-5.1、GLM-4-Flash）
-  - Agent 路由：build=Sonnet、plan=Sonnet、general=DeepSeek、explore=GLM-4-Flash
-  - MCP：claude-knowledge（记忆/技能/规则共享）
+  - Provider：LiteLLM（GLM-5.1/GLM-5-Turbo/GLM-4.7/GLM-4-Plus/DeepSeek-V3.2）
+  - Agent 路由：oh-my-openagent 智能分配（sisyphus 编排 → category_mapping 自动选模型）
+  - MCP：claude-knowledge + exa + context7 + grep_app
   - 文档：https://opencode.ai/docs/config/
+- [2026-04-15] [Opus] **OpenCode 插件补全（社区最佳配置）**
+  - 插件清单（10 个）：
+    1. oh-my-openagent — 多 agent 智能编排（sisyphus/atlas/prometheus 等 11 agent）
+    2. opencode-vibeguard — 安全防护
+    3. opencode-pty — 终端集成
+    4. opencode-scheduler — 定时任务
+    5. opencode-worktree — git worktree 隔离
+    6. opencode-stt — 语音输入（本地 Whisper，venv: /mnt/ai/cache/opencode-stt-venv）
+    7. envsitter-guard — .env 防泄露
+    8. opencode-snip — 输出压缩省 60-90% token
+    9. opencode-mystatus — AI 额度监控（/mystatus）
+    10. opencode-mem — 持久记忆向量 DB（Web UI: http://127.0.0.1:4747）
+  - 全局工具：opencode-telegram-bot（Telegram 远程控制）
+  - LSP：typescript/bash/python/json/yaml
+  - oh-my-openagent agents：sisyphus(编排)/atlas(并行)/prometheus(规划)/hephaestus(深度执行)/oracle(顾问)/librarian(文档)/explore(搜索)/metis(预规划)/momus(评审)/multimodal-looker(媒体)
+  - category_mapping：quick→glm-4.7 / deep→deepseek-v3.2 / visual-engineering→glm-5-turbo / ultrabrain→glm-5.1
 
 ## compiler.py v2（2026-04-13）
 
