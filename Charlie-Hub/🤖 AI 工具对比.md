@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-15 22:29:39
+updated: 2026-04-15 22:39:40
 source: /home/charlie/.claude/projects/-home-charlie/memory/ai-tools.md
 ---
 
@@ -692,3 +692,12 @@ Claude 操作─┘           ↓
   - 所有 agent 保留在 Tab 循环中，sisyphus 排第一
   - sisyphus 由 oh-my-openagent 插件注册，opencode.json 只需指定名字
   - 参考：https://opencode.ai/docs/en/config/ → default_agent 字段
+
+## DeepWiki-Open (2026-04-15)
+- Docker: `ghcr.io/asyncfuncai/deepwiki-open:latest`
+- 容器名: `deepwiki`
+- 前端: http://localhost:3000 | API: http://localhost:8001
+- LLM 后端: 通过 LiteLLM (OPENAI_BASE_URL=http://172.17.0.1:4000/v1)
+- 代理: HTTP_PROXY=http://192.168.123.209:7890 (tiktoken 下载需要)
+- 数据卷: ~/.adalflow → /root/.adalflow
+- 功能: GitHub 仓库文档生成、代码库分析、Wiki 自动生成
