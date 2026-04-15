@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-15 11:15:44
+updated: 2026-04-15 11:25:46
 source: /home/charlie/.claude/projects/-home-charlie/memory/nixos-config.md
 ---
 
@@ -607,3 +607,10 @@ Roo Code 的配置分散在 **4 个不同位置**，这是问题的根源：
 
 `roo-code-set
 - [2026-04-14] [RooCode-019d87a2] `nix flake check` 退出码为 0，输出中只有镜像下载的网络警告（SSL/连接问题），**配置本身无错误**。关键行 `checking NixOS configuration 'nixosConfigurations.minipc'...` 已通过验证。
+- [2026-04-15] [RooCode-019d8c37] 当前 DPI 配置分析：
+
+| 配置项 | 当前值 | 实际 DPI |
+|--------|--------|----------|
+| [`Gdk/UnscaledDPI`](home/charlie/.config/xsettingsd/xsettingsd.conf:1) | 98304 | 96 DPI |
+| [`gtk-xft-dpi`](home/charlie/.config/g
+- [2026-04-15] [RooCode-019d8c37] 用户反馈还要求增大 KDE 缩放到 1.25x。更新 [`kwinoutputconfig.json`](home/charlie/.config/kwinoutputconfig.json:35)：
