@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-14 23:07:03
+updated: 2026-04-15 11:15:44
 source: /home/charlie/.claude/projects/-home-charlie/memory/nixos-config.md
 ---
 
@@ -571,3 +571,39 @@ Roo Code 的任务数据存储在本地：
 - [2026-04-14] [RooCode-019d82e1] 根据搜索结果，发现 `~/roo-code-settings.json` 配置文件存在，但 VSCode 配置中缺少 `autoImportSettingsPath` 设置，导致 Roo Code 启动时无法自动导入配置。
 
 需要在 VSCode 用户配置中添加自动导入路径：
+- [2026-04-14] [RooCode-019d8c37] 当前 DPI 配置分析：
+
+| 配置项 | 当前值 | 实际 DPI |
+|--------|--------|----------|
+| [`Gdk/UnscaledDPI`](home/charlie/.config/xsettingsd/xsettingsd.conf:1) | 98304 | 96 DPI |
+| [`gtk-xft-dpi`](home/charlie/.config/g
+- [2026-04-14] [RooCode-019d8c37] 用户反馈还要求增大 KDE 缩放到 1.25x。更新 [`kwinoutputconfig.json`](home/charlie/.config/kwinoutputconfig.json:35)：
+- [2026-04-14] [RooCode-019d8826] 先读取 VSCode 设置和系统审计剩余部分：
+- [2026-04-14] [RooCode-019d8826] 检查全局 VSCode 设置和 Roo Code 状态：
+- [2026-04-14] [RooCode-019d87e9] 分析完成。以下是完整的架构诊断和解决方案。
+
+---
+
+## 问题诊断
+
+### 数据存储架构
+
+Roo Code 的配置分散在 **4 个不同位置**，这是问题的根源：
+
+| 存储位置 | 内容 | 状态 |
+|---------|------|------|
+| [`state.vscdb`](/home/charlie/.config/Code/User/globalStorage/stat
+- [2026-04-14] [RooCode-019d876e] 找到了！[`opencode.json`](/home/charlie/.config/opencode/opencode.json) 中的模型 ID 和 LiteLLM 不匹配：
+
+| OpenCode 配置的模型 | LiteLLM 实际有 | 状态 |
+|---|---|---|
+| `deepseek-v3.2` | `deepseek-v3.2` | ✅ 刚添加 |
+| `qwen2-7
+- [2026-04-14] [RooCode-019d876e] 找到问题了！Roo Code 的 VS Code 状态数据库中：
+
+- `currentApiConfigName`: `"default"`（应该是 `"litellm-local"`）
+- `apiProvider`: `"zai"`（应该是 `"litellm"`）
+- `apiModelId`: `"glm-5"`（应该是 `"deepseek-v3.2"`）
+
+`roo-code-set
+- [2026-04-14] [RooCode-019d87a2] `nix flake check` 退出码为 0，输出中只有镜像下载的网络警告（SSL/连接问题），**配置本身无错误**。关键行 `checking NixOS configuration 'nixosConfigurations.minipc'...` 已通过验证。
