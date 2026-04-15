@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-15 22:19:39
+updated: 2026-04-15 22:29:39
 source: /home/charlie/.claude/projects/-home-charlie/memory/ai-tools.md
 ---
 
@@ -676,3 +676,19 @@ Claude 操作─┘           ↓
   - Cline 扩展：已禁用（`code --disable-extension saoudrizwan.claude-dev`）
   - ttyd-gemini：已停止并禁用
   - Windsurf/Cursor 本体保留（NixOS 包管理，需走 nix 配置变更）
+
+## OpenCode sidebar 配置（2026-04-15）
+
+- [2026-04-15] [GLM-5.1] **OpenCode sidebar 消失修复**
+  - 现象：TUI 右侧 sidebar 不显示，找不到 show sidebar 选项
+  - 根因：OpenCode sidebar 可见性由 KV 存储 > config > 默认值 三级优先级控制，之前某次 `ctrl+x b` 隐藏被 KV 记住
+  - 快捷键：`ctrl+x` 然后 `b` 切换 sidebar
+  - 配置修复：在 `~/.config/opencode/tui.json` 添加 `"sidebar": "show"` 强制初始显示
+  - 可选值：`"auto"` / `"show"` / `"hide"`
+  - 参考：PR #6955, Issue #3682
+
+- [2026-04-15] [GLM-5.1] **OpenCode 默认 agent 设为 sisyphus**
+  - 配置：`opencode.json` 添加 `"default_agent": "sisyphus"`
+  - 所有 agent 保留在 Tab 循环中，sisyphus 排第一
+  - sisyphus 由 oh-my-openagent 插件注册，opencode.json 只需指定名字
+  - 参考：https://opencode.ai/docs/en/config/ → default_agent 字段
