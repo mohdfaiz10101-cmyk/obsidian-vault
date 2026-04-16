@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-16 11:40:27
+updated: 2026-04-16 11:50:28
 source: /home/charlie/.claude/projects/-home-charlie/memory/nixos-config.md
 ---
 
@@ -401,7 +401,7 @@ nix.gc.options = "--delete-older-than 3d";  # 从 7d 缩短到 3d
 
 **Letta 配置**：
 - URL: `http://localhost:8283`
-- Agent: `agent-caad9ac5-2a89-4d69-ab74-08379cce48f2` (code-assistant)
+- Agent: `agent-02380eae-9ac2-45f4-b9b2-dabf40e0abea` (code-assistant)
 - Auth: `Authorization: Bearer letta`
 
 **Memory 文件路径**：
