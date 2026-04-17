@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 06:03:44
+updated: 2026-04-18 06:13:44
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -102,3 +102,8 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 05:55] [medium] 排查高内存占用进程（可能是浏览器或AI任务残留），释放内存
 - [ ] [AGI→OP] [2026-04-18 05:56] [high] 检查 charlie-hub 服务日志并尝试重启
 - [ ] [AGI→OP] [2026-04-18 05:56] [high] 诊断 OP 进程为何停止上报状态并恢复运行
+- [ ] [AGI→OP] [2026-04-18 06:08] [medium] 检查系统内存占用 TOP 进程，识别是否为 AI 模型或浏览器泄露，并清理
+- [ ] [AGI→OP] [2026-04-18 06:10] [medium] 检查高内存占用原因并执行必要的缓存清理或进程检查
+- [ ] [AGI→OP] [2026-04-18 06:11] [high] 启动 letta 服务以恢复长期记忆/Agent 上下文管理
+- [ ] [AGI→OP] [2026-04-18 06:11] [medium] 检查高内存占用进程（如 Python/LiteLLM/模型加载）并释放内存
+- [ ] [AGI→OP] [2026-04-18 06:11] [medium] 排查并重启 OP 监控进程，恢复实时状态感知
