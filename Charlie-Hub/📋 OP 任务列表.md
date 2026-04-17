@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 05:43:44
+updated: 2026-04-18 05:53:44
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -94,3 +94,8 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 05:41] [medium] 启动letta服务
 - [ ] [AGI→OP] [2026-04-18 05:41] [medium] 刷新OP状态数据（当前数据已过期）
 - [ ] [AGI→OP] [2026-04-18 05:42] [medium] 排查高内存占用进程，确认是否为 LiteLLM 缓存或僵尸进程导致
+- [ ] [AGI→OP] [2026-04-18 05:43] [medium] 检查并重启 charlie-hub 服务，确认 9800 端口可访问
+- [ ] [AGI→OP] [2026-04-18 05:43] [low] 监控内存使用率（当前 87%），如持续接近 90% 则需排查进程
+- [ ] [AGI→OP] [2026-04-18 05:45] [low] 分析高内存占用进程，排查是否有内存泄漏
+- [ ] [AGI→OP] [2026-04-18 05:50] [medium] 检查高内存占用进程，排查是否存在内存泄漏
+- [ ] [AGI→OP] [2026-04-18 05:53] [high] 检查高内存占用进程（如AI模型或浏览器）并评估是否释放内存
