@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-17 11:22:30
+updated: 2026-04-17 11:32:31
 source: /home/charlie/.claude/projects/-home-charlie/memory/nixos-config.md
 ---
 
@@ -651,3 +651,21 @@ Roo Code 的配置分散在 **4 个不同位置**，这是问题的根源：
 - **storage.nix 新增**：polkit 规则允许 `users` 组无密码挂载/卸载/弹出/解锁设备
 - 覆盖操作：`filesystem-mount` / `filesystem-mount-system` / `mount-other-seat` / `unmount-others` / `encrypted-unlock` / `eject-media` / `power-off-drive`
 - 效果：Dolphin 侧边栏点击存储设备不再弹密码框
+
+### 2026-04-17 [Sonnet] OpenCode Scheduler 配置
+- **systemd 用户 timer**: proxy-guardian、service-nurse、heartbeat-task-check
+  - 配置路径：`~/.config/opencode/scheduler/scopes/charlie-b445f233ebb8/jobs/*.json`
+  - systemd 路径：`~/.config/systemd/user/opencode-job-charlie-b445f233ebb8-*.{timer,service}`
+  - perl 路径：必须使用 `/run/current-system/sw/bin/perl`（NixOS 符号链接）
+- **巡检 agent**:
+  - proxy-guardian.md: FlClash 代理可用性验证 + 关键服务测试（claude.ai/google/github）
+  - service-nurse.md: Docker容器检查 + systemd服务检查 + 端口可达性 + 磁盘空间
+  - 已修复：proxy-guardian.md 的 `temperature: 0.3` 从 `tools:` 块移到顶层（原位置导致 scheduler 报错）
+- **systemd 服务 PATH 修复**：
+  - health-monitor.service: 添加 `hostname` 到 `path = with pkgs; [ ... ]`
+  - deepseek-auto-train.service: 添加 `python3` 到 `path = with pkgs; [ ... ]`
+  - 脚本修复：health-monitor.sh 的 `$(hostname)` 改为 `$(cat /etc/hostname 2>/dev/null || echo "nixos")`
+- **状态**：
+  - Docker: 11/11 容器运行正常
+  - 磁盘：/mnt/data 86% 需关注
+  - 失败服务：firewall.service（网络不可达）、health-monitor.service（已修复）、deepseek-auto-train.service（已修复）
