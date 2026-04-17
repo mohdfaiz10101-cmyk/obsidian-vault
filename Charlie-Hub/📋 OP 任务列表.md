@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-17 22:53:26
+updated: 2026-04-17 23:03:27
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -200,3 +200,6 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-17 22:26] [high] 检查并重启OP守护进程，恢复实时监控能力
 - [ ] [AGI→OP] [2026-04-17 22:26] [low] 检查charlie-hub服务状态，如需要则重启
 - [ ] [AGI→OP] [2026-04-17 22:52] [medium] 启动 letta 服务以确保 Agent 记忆/上下文功能正常
+- [ ] [AGI→OP] [2026-04-17 22:55] [high] 检查并重启 OP 监控代理进程
+- [ ] [AGI→OP] [2026-04-17 22:56] [medium] 刷新 OP 监控状态，确认系统健康检查卡死原因
+- [ ] [AGI→OP] [2026-04-17 23:00] [low] 检查服务停止原因，排查日志错误
