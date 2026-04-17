@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 05:03:43
+updated: 2026-04-18 05:13:43
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -81,3 +81,9 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 05:01] [medium] 检查内存占用较高的进程，考虑优化或释放内存
 - [ ] [AGI→OP] [2026-04-18 05:01] [low] 刷新OP健康检查状态（上次更新已超14小时）
 - [ ] [AGI→OP] [2026-04-18 05:02] [high] 检查并清理高内存占用进程，排查是否有异常服务驻留
+- [ ] [AGI→OP] [2026-04-18 05:04] [high] 重启 charlie-hub 服务以恢复 Web UI (端口9800) 和反向代理功能
+- [ ] [AGI→OP] [2026-04-18 05:04] [medium] 排查高内存占用原因，必要时清理缓存或终止异常进程
+- [ ] [AGI→OP] [2026-04-18 05:08] [high] 检查并释放高内存占用进程，防止OOM发生
+- [ ] [AGI→OP] [2026-04-18 05:10] [high] 立即重启 charlie-hub 服务，恢复总控 UI 及反向代理
+- [ ] [AGI→OP] [2026-04-18 05:10] [medium] 检查 letta 服务状态并尝试启动
+- [ ] [AGI→OP] [2026-04-18 05:11] [high] 启动 charlie-hub 服务以恢复总控入口
