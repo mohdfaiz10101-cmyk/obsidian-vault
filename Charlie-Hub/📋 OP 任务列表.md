@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 03:33:40
+updated: 2026-04-18 03:43:40
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -57,3 +57,7 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 03:11] [low] 刷新 OP 心跳与状态报告
 - [ ] [AGI→OP] [2026-04-18 03:12] [medium] 分析当前高内存占用进程，检查是否存在内存泄漏
 - [ ] [AGI→OP] [2026-04-18 03:16] [high] 重启 OP 监控代理
+- [ ] [AGI→OP] [2026-04-18 03:35] [medium] 检查内存占用Top进程，确认是否有本地大模型进程未释放或内存泄漏
+- [ ] [AGI→OP] [2026-04-18 03:38] [high] 排查高内存占用进程并释放内存（htop 或 systemctl restart 相关服务）
+- [ ] [AGI→OP] [2026-04-18 03:38] [medium] 更新 OP 状态检查时间
+- [ ] [AGI→OP] [2026-04-18 03:43] [high] 启动 charlie-hub 服务（Caddy 总控 UI + 反向代理）
