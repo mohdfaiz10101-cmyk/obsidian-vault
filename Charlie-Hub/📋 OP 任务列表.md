@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 01:03:34
+updated: 2026-04-18 01:13:34
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -30,3 +30,16 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [MAC→OP] [2026-04-18 00:55] [high] 实现工作流自动生成L3层：~/agi/flows/workflow_gen.py，用户输入新任务类型→Claude生成LangGraph图结构→沙盒测试→通过后写入~/agi/flows/→下次直接复用。建立flows/index.json索引。
 
 - [ ] [MAC→OP] [2026-04-18 00:55] [medium] 集成orchestrator统一入口：~/agi/orchestrator.py，intent_classifier路由（regex规则引擎）→对话→macg，代码→claude -p，运维→op-tasks，复杂多步→对应flows/子图。alias: ai="python3 ~/agi/orchestrator.py"
+
+- [ ] [AGI→OP] [ANDROID-P0] [high] 创建 ~/agi/device-registry.json — 注册 Xiaomi M2011K2G (89f5ae98) 设备信息：OS/RAM/存储/能力列表，schema: {device_id, name, type, capabilities[], last_seen}
+- [ ] [AGI→OP] [ANDROID-P0] [high] 创建 ~/agi/sensor-bridge.py — 定时 (每5min) 调用 android_sensor.sense_android() 并追加到 /tmp/android-telemetry.jsonl，作为 brain.py 的离线数据缓冲层
+- [ ] [AGI→OP] [ANDROID-P0] [medium] 创建 /tmp/decision-log.db (SQLite) — 记录 brain.py 每次 Think→Act 的决策轨迹，表结构: (id, timestamp, sense_hash, llm_summary, actions_json, outcome)，为未来信任模型训练准备
+- [ ] [AGI→OP] [ANDROID-P1] [medium] 安装 Termux 到 Xiaomi M2011K2G — 下载 Termux APK (via ADB install)，配置 SSH server，生成 ed25519 密钥，写入 ~/.ssh/authorized_keys，验证 ssh termux@<device-ip> 可连
+- [ ] [AGI→OP] [ANDROID-P1] [low] 配置 Xiaomi 手机 Tailscale — 通过 ADB 安装 Tailscale APK，引导用户在手机上完成认证，之后 brain.py 可通过 Tailscale IP 无线访问
+- [ ] [AGI→OP] [2026-04-18 01:11] [high] 重启 charlie-hub 服务以恢复端口 9800 访问
+- [ ] [AGI→OP] [2026-04-18 01:11] [medium] 刷新 OP 代理状态并更新心跳
+
+- [ ] [AGI→OP] [INTP优化] [high] Fe自动化：将 WeChat/Telegram/Discord 服务存活检查接入 self_heal.py，断线自动重启，不依赖人工干预
+- [ ] [AGI→OP] [INTP优化] [high] Ne容纳门：在 flows/workflow_gen.py 中加前置检查——flows/index.json 里有未完成(runs==0)的 flow 时，拒绝新建并返回提示"请先完成现有flow"
+- [ ] [AGI→OP] [INTP优化] [medium] Ti验证层：扫描 CLAUDE.md 所有 MUST 规则，对比 audit.log 执行记录，输出"从未被触发的规则"列表供用户删减
+- [ ] [AGI→OP] [2026-04-18 01:13] [high] 启动 Charlie Hub 服务 (systemctl start charlie-hub)
