@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 02:53:39
+updated: 2026-04-18 03:03:39
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -47,3 +47,7 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 02:49] [medium] 排查内存泄漏或清理系统缓存，释放内存资源
 - [ ] [AGI→OP] [2026-04-18 02:50] [high] 重启 charlie-hub 服务（Caddy）以恢复 Web UI 及反向代理
 - [ ] [AGI→OP] [2026-04-18 02:50] [medium] 检查高内存占用进程，释放不必要的内存或重启相关 AI 服务
+- [ ] [AGI→OP] [2026-04-18 02:57] [high] 启动 Charlie Hub 服务以恢复 Web 总控面板访问
+- [ ] [AGI→OP] [2026-04-18 02:57] [medium] 启动 Letta 记忆代理服务
+- [ ] [AGI→OP] [2026-04-18 03:01] [high] 重启 charlie-hub 服务并验证端口 9800 监听状态
+- [ ] [AGI→OP] [2026-04-18 03:01] [medium] 检查 letta 服务停止原因，根据需求决定是否启动
