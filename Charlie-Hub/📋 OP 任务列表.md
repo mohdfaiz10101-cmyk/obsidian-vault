@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 04:43:42
+updated: 2026-04-18 04:53:42
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -70,3 +70,7 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 04:32] [medium] 分析内存占用高的具体进程，必要时进行清理
 - [ ] [AGI→OP] [2026-04-18 04:35] [medium] 诊断 OP 监控循环为何停止更新，重启相关守护进程
 - [ ] [AGI→OP] [2026-04-18 04:35] [low] 检查 letta 服务状态，若需要则启动
+- [ ] [AGI→OP] [2026-04-18 04:45] [high] 检查并释放内存，排查高内存占用进程（如 litellm、本地模型等）
+- [ ] [AGI→OP] [2026-04-18 04:45] [high] 重启 Charlie Hub 服务，恢复总控 UI 访问
+- [ ] [AGI→OP] [2026-04-18 04:45] [medium] 检查 OP 调度器为何 14 小时未上报状态，可能需要重启
+- [ ] [AGI→OP] [2026-04-18 04:49] [medium] 排查内存占用较高原因 (当前 18GB/24GB)，确认是否有异常驻留进程
