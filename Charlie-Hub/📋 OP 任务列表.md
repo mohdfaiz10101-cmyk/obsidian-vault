@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 06:33:45
+updated: 2026-04-18 06:43:46
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -111,3 +111,7 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 06:29] [medium] 检查内存占用进程，清理非必要缓存
 - [ ] [AGI→OP] [2026-04-18 06:29] [medium] 恢复 OP 心跳监控，确保数据实时性
 - [ ] [AGI→OP] [2026-04-18 06:33] [medium] 检查并重启 letta 记忆代理服务
+- [ ] [AGI→OP] [2026-04-18 06:34] [high] 启动 charlie-hub 服务以恢复网关和 UI 访问
+- [ ] [AGI→OP] [2026-04-18 06:34] [medium] 排查高内存占用进程（可能是 AI 模型或浏览器缓存）
+- [ ] [AGI→OP] [2026-04-18 06:39] [medium] 排查 OP 监控脚本为何未上报数据，重启 OP Agent
+- [ ] [AGI→OP] [2026-04-18 06:39] [low] 分析内存占用最高的进程，必要时释放缓存
