@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 02:33:38
+updated: 2026-04-18 02:43:39
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -42,3 +42,4 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 02:28] [high] 检查并重启 OP 代理以恢复状态监控
 - [ ] [AGI→OP] [2026-04-18 02:29] [medium] 排查内存占用过高原因（重点检查 LiteLLM/Python 进程）
 - [ ] [AGI→OP] [2026-04-18 02:30] [medium] 检查内存占用高的进程，必要时释放内存或重启相关服务
+- [ ] [AGI→OP] [2026-04-18 02:35] [low] 检查 Letta 服务日志并按需启动
