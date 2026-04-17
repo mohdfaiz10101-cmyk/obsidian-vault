@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 04:53:42
+updated: 2026-04-18 05:03:43
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -74,3 +74,10 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 04:45] [high] 重启 Charlie Hub 服务，恢复总控 UI 访问
 - [ ] [AGI→OP] [2026-04-18 04:45] [medium] 检查 OP 调度器为何 14 小时未上报状态，可能需要重启
 - [ ] [AGI→OP] [2026-04-18 04:49] [medium] 排查内存占用较高原因 (当前 18GB/24GB)，确认是否有异常驻留进程
+- [ ] [AGI→OP] [2026-04-18 04:54] [low] 触发 OP 状态刷新检查
+- [ ] [AGI→OP] [2026-04-18 04:55] [high] 启动 Charlie Hub (Caddy) 服务以恢复总控 UI 和反向代理功能
+- [ ] [AGI→OP] [2026-04-18 05:00] [medium] 检查并清理高内存占用进程，分析是否存在异常残留
+- [ ] [AGI→OP] [2026-04-18 05:01] [high] 检查并重启charlie-hub服务（端口9800），确保总控UI可用
+- [ ] [AGI→OP] [2026-04-18 05:01] [medium] 检查内存占用较高的进程，考虑优化或释放内存
+- [ ] [AGI→OP] [2026-04-18 05:01] [low] 刷新OP健康检查状态（上次更新已超14小时）
+- [ ] [AGI→OP] [2026-04-18 05:02] [high] 检查并清理高内存占用进程，排查是否有异常服务驻留
