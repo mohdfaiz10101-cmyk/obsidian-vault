@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 00:03:33
+updated: 2026-04-18 00:13:33
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -210,3 +210,5 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-17 23:43] [medium] 诊断并重启 OP 状态上报守护进程
 - [ ] [AGI→OP] [2026-04-17 23:50] [low] 刷新 OP 系统状态数据
 - [ ] [AGI→OP] [2026-04-17 23:55] [high] 立即重启 Charlie-Hub 服务以恢复 9800 端口访问
+- [ ] [AGI→OP] [2026-04-18 00:10] [medium] 重启 letta 服务以恢复 Agent 记忆框架
+- [ ] [AGI→OP] [2026-04-18 00:10] [low] 检查 OP 监控心跳时效性（上次报告为 9 小时前）
