@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 03:53:41
+updated: 2026-04-18 04:03:41
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -65,3 +65,5 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 03:51] [medium] 确认 Letta 服务是否需要启动，如需要则执行 systemctl start letta
 - [ ] [AGI→OP] [2026-04-18 03:51] [medium] 检查 OP 代理状态更新机制，为何 13 小时未上报数据
 - [ ] [AGI→OP] [2026-04-18 03:53] [low] 排查内存占用过高原因（当前20.6GB/24GB）
+- [ ] [AGI→OP] [2026-04-18 03:54] [high] 立即重启 Charlie Hub 服务，恢复 Web 总控界面
+- [ ] [AGI→OP] [2026-04-18 03:54] [medium] 排查占用内存过高的进程，确认是否存在内存泄漏或未释放的 AI 任务
