@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 07:33:47
+updated: 2026-04-18 07:43:47
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -117,3 +117,4 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 06:39] [low] 分析内存占用最高的进程，必要时释放缓存
 - [ ] [AGI→OP] [2026-04-18 07:03] [high] 排查 OP 监控循环停止更新状态的原因并恢复
 - [ ] [AGI→OP] [2026-04-18 07:16] [medium] 排查内存高占用原因（重点检查 LiteLLM 或 Paperclip 相关进程）
+- [ ] [AGI→OP] [2026-04-18 07:40] [medium] 检查高内存占用进程并释放内存
