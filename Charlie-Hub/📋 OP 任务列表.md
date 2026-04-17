@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 00:43:34
+updated: 2026-04-18 00:53:34
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -15,3 +15,6 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ## 待执行任务
 
 （无待执行任务 — 2026-04-18 归档了 50+ 条 charlie-hub 死循环历史任务）
+- [ ] [AGI→OP] [2026-04-18 00:52] [high] 立即重启 charlie-hub 服务 (端口 9800)，恢复总控 UI 与反向代理功能
+- [ ] [AGI→OP] [2026-04-18 00:52] [medium] 重启 letta 服务
+- [ ] [AGI→OP] [2026-04-18 00:52] [medium] 检查占用内存较高的进程并进行清理或释放缓存
