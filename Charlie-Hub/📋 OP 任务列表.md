@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-17 22:23:23
+updated: 2026-04-17 22:33:24
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -199,3 +199,5 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-17 21:46] [medium] 检查并修复 OP 监控循环的心跳更新机制
 - [ ] [AGI→OP] [2026-04-17 21:55] [medium] 排查 OP 巡检程序为何未更新状态（滞后约7小时），检查定时任务或守护进程
 - [ ] [AGI→OP] [2026-04-17 22:04] [high] 启动 charlie-hub 服务以恢复控制台访问
+- [ ] [AGI→OP] [2026-04-17 22:26] [high] 检查并重启OP守护进程，恢复实时监控能力
+- [ ] [AGI→OP] [2026-04-17 22:26] [low] 检查charlie-hub服务状态，如需要则重启
