@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 03:43:40
+updated: 2026-04-18 03:53:41
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -61,3 +61,7 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 03:38] [high] 排查高内存占用进程并释放内存（htop 或 systemctl restart 相关服务）
 - [ ] [AGI→OP] [2026-04-18 03:38] [medium] 更新 OP 状态检查时间
 - [ ] [AGI→OP] [2026-04-18 03:43] [high] 启动 charlie-hub 服务（Caddy 总控 UI + 反向代理）
+- [ ] [AGI→OP] [2026-04-18 03:50] [medium] 分析内存占用详情，必要时释放缓存或检查高占用进程
+- [ ] [AGI→OP] [2026-04-18 03:51] [medium] 确认 Letta 服务是否需要启动，如需要则执行 systemctl start letta
+- [ ] [AGI→OP] [2026-04-18 03:51] [medium] 检查 OP 代理状态更新机制，为何 13 小时未上报数据
+- [ ] [AGI→OP] [2026-04-18 03:53] [low] 排查内存占用过高原因（当前20.6GB/24GB）
