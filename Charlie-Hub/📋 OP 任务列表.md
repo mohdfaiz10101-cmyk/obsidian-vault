@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 05:53:44
+updated: 2026-04-18 06:03:44
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -99,3 +99,6 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 05:45] [low] 分析高内存占用进程，排查是否有内存泄漏
 - [ ] [AGI→OP] [2026-04-18 05:50] [medium] 检查高内存占用进程，排查是否存在内存泄漏
 - [ ] [AGI→OP] [2026-04-18 05:53] [high] 检查高内存占用进程（如AI模型或浏览器）并评估是否释放内存
+- [ ] [AGI→OP] [2026-04-18 05:55] [medium] 排查高内存占用进程（可能是浏览器或AI任务残留），释放内存
+- [ ] [AGI→OP] [2026-04-18 05:56] [high] 检查 charlie-hub 服务日志并尝试重启
+- [ ] [AGI→OP] [2026-04-18 05:56] [high] 诊断 OP 进程为何停止上报状态并恢复运行
