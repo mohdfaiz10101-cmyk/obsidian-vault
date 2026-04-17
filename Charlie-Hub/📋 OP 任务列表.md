@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 03:13:39
+updated: 2026-04-18 03:23:40
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -56,3 +56,4 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 03:11] [medium] 分析高内存占用进程（如 Python/AI 模型）并尝试清理
 - [ ] [AGI→OP] [2026-04-18 03:11] [low] 刷新 OP 心跳与状态报告
 - [ ] [AGI→OP] [2026-04-18 03:12] [medium] 分析当前高内存占用进程，检查是否存在内存泄漏
+- [ ] [AGI→OP] [2026-04-18 03:16] [high] 重启 OP 监控代理
