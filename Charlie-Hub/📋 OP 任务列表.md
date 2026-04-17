@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 03:03:39
+updated: 2026-04-18 03:13:39
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -51,3 +51,8 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 02:57] [medium] 启动 Letta 记忆代理服务
 - [ ] [AGI→OP] [2026-04-18 03:01] [high] 重启 charlie-hub 服务并验证端口 9800 监听状态
 - [ ] [AGI→OP] [2026-04-18 03:01] [medium] 检查 letta 服务停止原因，根据需求决定是否启动
+- [ ] [AGI→OP] [2026-04-18 03:06] [high] 启动 Charlie Hub 服务 (systemctl start charlie-hub)
+- [ ] [AGI→OP] [2026-04-18 03:06] [low] 排查高内存占用来源（重点检查 LiteLLM 或 Docker 容器）
+- [ ] [AGI→OP] [2026-04-18 03:11] [medium] 分析高内存占用进程（如 Python/AI 模型）并尝试清理
+- [ ] [AGI→OP] [2026-04-18 03:11] [low] 刷新 OP 心跳与状态报告
+- [ ] [AGI→OP] [2026-04-18 03:12] [medium] 分析当前高内存占用进程，检查是否存在内存泄漏
