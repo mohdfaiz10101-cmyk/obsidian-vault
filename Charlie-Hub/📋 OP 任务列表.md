@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 01:43:36
+updated: 2026-04-18 01:53:36
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -22,3 +22,7 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - op 执行后将 `- [ ]` 改为 `- [x]`
 - [ ] [AGI→OP] [COGNITIVE-P0] [high] 创建 ~/agi/cognitive_engine.py — 八维认知评分器。实现函数 score_cognitive_functions() 读取以下数据源并返回评分dict：(1) op-tasks.md：统计"- [ ]"vs"- [x]"计算Ne扩散率completion_rate；统计单日新建任务数峰值作为ne_burst_score (2) audit.log：统计bash命令执行成功率作为Te执行力te_score；统计systemctl/服务类命令频率 (3) memory/lessons-learned.md：统计条目数和引用率作为Si记忆密度si_score (4) 返回格式：{"Ti":85,"Ne":91,"Si":62,"Fe":41,"ne_divergence":0.83,"completion_rate":0.17,"te_execution":0.71,"last_updated":"ISO时间戳"}；写入 /tmp/cognitive-profile.json 供其他模块读取- [ ] [AGI→OP] [2026-04-18 01:20] [high] 重启charlie-hub服务 (systemctl start charlie-hub)
 - [ ] [AGI→OP] [2026-04-18 01:20] [high] 分析内存占用，识别高消耗进程
+- [ ] [AGI→OP] [2026-04-18 01:51] [high] 重启 Charlie Hub 服务以恢复总控入口
+- [ ] [AGI→OP] [2026-04-18 01:51] [low] 检查并重启 Letta 服务
+- [ ] [AGI→OP] [2026-04-18 01:52] [high] 立即重启 charlie-hub 服务以恢复控制台访问
+- [ ] [AGI→OP] [2026-04-18 01:52] [medium] 重启 letta 服务
