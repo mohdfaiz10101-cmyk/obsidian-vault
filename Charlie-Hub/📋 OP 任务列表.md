@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 02:43:39
+updated: 2026-04-18 02:53:39
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -43,3 +43,7 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 02:29] [medium] 排查内存占用过高原因（重点检查 LiteLLM/Python 进程）
 - [ ] [AGI→OP] [2026-04-18 02:30] [medium] 检查内存占用高的进程，必要时释放内存或重启相关服务
 - [ ] [AGI→OP] [2026-04-18 02:35] [low] 检查 Letta 服务日志并按需启动
+- [ ] [AGI→OP] [2026-04-18 02:47] [medium] 检查高内存占用进程，排查是否由浏览器或未释放的 AI 模型缓存导致
+- [ ] [AGI→OP] [2026-04-18 02:49] [medium] 排查内存泄漏或清理系统缓存，释放内存资源
+- [ ] [AGI→OP] [2026-04-18 02:50] [high] 重启 charlie-hub 服务（Caddy）以恢复 Web UI 及反向代理
+- [ ] [AGI→OP] [2026-04-18 02:50] [medium] 检查高内存占用进程，释放不必要的内存或重启相关 AI 服务
