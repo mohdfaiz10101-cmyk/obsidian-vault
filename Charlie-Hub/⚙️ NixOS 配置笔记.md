@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-17 19:33:09
+updated: 2026-04-17 19:43:10
 source: /home/charlie/.claude/projects/-home-charlie/memory/nixos-config.md
 ---
 
