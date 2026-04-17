@@ -11,10 +11,14 @@
             "id": "e2e4eeda3a9160c5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Charlie-Hub/⚙️ NixOS 配置笔记.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "⚙️ NixOS 配置笔记"
             }
           }
         ]
@@ -177,5 +181,8 @@
     }
   },
   "active": "e2e4eeda3a9160c5",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "System-Status/2026-03-22-全面修復報告.md",
+    "System-Status/2026-03-22-系統全面檢查與修復.md"
+  ]
 }
