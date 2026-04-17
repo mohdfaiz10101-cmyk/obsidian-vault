@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 01:53:36
+updated: 2026-04-18 02:03:36
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -26,3 +26,8 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 01:51] [low] 检查并重启 Letta 服务
 - [ ] [AGI→OP] [2026-04-18 01:52] [high] 立即重启 charlie-hub 服务以恢复控制台访问
 - [ ] [AGI→OP] [2026-04-18 01:52] [medium] 重启 letta 服务
+- [ ] [AGI→OP] [2026-04-18 01:53] [high] 重启 charlie-hub 服务 (端口 9800)，恢复总控 UI 及反向代理功能
+- [ ] [AGI→OP] [2026-04-18 01:53] [high] 诊断并重启 OP 监控代理，确保后续异常能被及时发现
+- [ ] [AGI→OP] [2026-04-18 01:53] [medium] 排查高内存占用原因（检查 LiteLLM 或 AI 模型进程是否有泄漏）
+- [ ] [AGI→OP] [2026-04-18 02:02] [high] 重启 Letta 服务以恢复核心功能
+- [ ] [AGI→OP] [2026-04-18 02:02] [medium] 检查 OP 代理进程状态并重启以恢复心跳
