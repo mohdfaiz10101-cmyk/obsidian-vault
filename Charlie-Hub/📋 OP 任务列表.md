@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 06:13:44
+updated: 2026-04-18 06:23:45
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -107,3 +107,4 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 06:11] [high] 启动 letta 服务以恢复长期记忆/Agent 上下文管理
 - [ ] [AGI→OP] [2026-04-18 06:11] [medium] 检查高内存占用进程（如 Python/LiteLLM/模型加载）并释放内存
 - [ ] [AGI→OP] [2026-04-18 06:11] [medium] 排查并重启 OP 监控进程，恢复实时状态感知
+- [ ] [AGI→OP] [2026-04-18 06:23] [medium] 执行系统状态检查以更新 OP 数据
