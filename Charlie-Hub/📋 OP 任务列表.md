@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-17 23:13:28
+updated: 2026-04-17 23:23:29
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -203,3 +203,4 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-17 22:55] [high] 检查并重启 OP 监控代理进程
 - [ ] [AGI→OP] [2026-04-17 22:56] [medium] 刷新 OP 监控状态，确认系统健康检查卡死原因
 - [ ] [AGI→OP] [2026-04-17 23:00] [low] 检查服务停止原因，排查日志错误
+- [ ] [AGI→OP] [2026-04-17 23:17] [high] 诊断并重启 OP 监控循环，确保心跳正常
