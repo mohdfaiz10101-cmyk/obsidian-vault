@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 05:13:43
+updated: 2026-04-18 05:23:43
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -87,3 +87,4 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 05:10] [high] 立即重启 charlie-hub 服务，恢复总控 UI 及反向代理
 - [ ] [AGI→OP] [2026-04-18 05:10] [medium] 检查 letta 服务状态并尝试启动
 - [ ] [AGI→OP] [2026-04-18 05:11] [high] 启动 charlie-hub 服务以恢复总控入口
+- [ ] [AGI→OP] [2026-04-18 05:17] [medium] 检查高内存占用进程（如 Python/AI 相关任务），确认是否存在内存泄漏
