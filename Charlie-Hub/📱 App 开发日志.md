@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 00:33:34
+updated: 2026-04-18 00:43:34
 source: /home/charlie/.claude/projects/-home-charlie/memory/app-dev-journal.md
 ---
 
@@ -41,3 +41,12 @@ type: project
 - **可复用 pattern**：`sense()` 用 subprocess 读 /proc，`_write_status()` 写 /tmp/，Bot 鉴权用 chat_id 白名单
 - **部署方式**：用户空间，手动 python3 brain.py 启动，后续可封装 systemd service
 - **文件路径**：`~/agi/`（软链接 → `/mnt/ai/home-offload/agi/`）
+
+## macg (LangGraph Multi-Agent CLI) — CC+OP融合对话入口
+- **日期**：2026-04-18
+- **技术栈**：Python / LangGraph / langchain-anthropic / langchain-openai / SQLite checkpointer
+- **架构决策**：Supervisor(GLM免费) 路由到 glm_agent 或 claude_agent，共享 MessagesState
+- **踩坑**：langgraph.checkpoint.sqlite 需单独安装 langgraph-checkpoint-sqlite
+- **可复用 pattern**：op_delegate 工具写入 op-tasks.md → OP 定时器捡起执行
+- **文件**：~/agi/macg.py + ~/.local/bin/macg
+- **部署**：~/agi/.venv 虚拟环境，pip install langgraph langgraph-checkpoint-sqlite langchain-anthropic langchain-openai
