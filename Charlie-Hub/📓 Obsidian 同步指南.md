@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 05:33:43
+updated: 2026-04-18 05:43:44
 source: /home/charlie/.claude/projects/-home-charlie/memory/obsidian-sync-guide.md
 ---
 
