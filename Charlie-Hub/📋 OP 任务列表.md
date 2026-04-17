@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 04:23:41
+updated: 2026-04-18 04:33:42
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -67,3 +67,4 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 03:53] [low] 排查内存占用过高原因（当前20.6GB/24GB）
 - [ ] [AGI→OP] [2026-04-18 03:54] [high] 立即重启 Charlie Hub 服务，恢复 Web 总控界面
 - [ ] [AGI→OP] [2026-04-18 03:54] [medium] 排查占用内存过高的进程，确认是否存在内存泄漏或未释放的 AI 任务
+- [ ] [AGI→OP] [2026-04-18 04:32] [medium] 分析内存占用高的具体进程，必要时进行清理
