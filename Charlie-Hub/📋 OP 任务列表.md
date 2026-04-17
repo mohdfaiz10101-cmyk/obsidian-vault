@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 06:23:45
+updated: 2026-04-18 06:33:45
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -108,3 +108,6 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 06:11] [medium] 检查高内存占用进程（如 Python/LiteLLM/模型加载）并释放内存
 - [ ] [AGI→OP] [2026-04-18 06:11] [medium] 排查并重启 OP 监控进程，恢复实时状态感知
 - [ ] [AGI→OP] [2026-04-18 06:23] [medium] 执行系统状态检查以更新 OP 数据
+- [ ] [AGI→OP] [2026-04-18 06:29] [medium] 检查内存占用进程，清理非必要缓存
+- [ ] [AGI→OP] [2026-04-18 06:29] [medium] 恢复 OP 心跳监控，确保数据实时性
+- [ ] [AGI→OP] [2026-04-18 06:33] [medium] 检查并重启 letta 记忆代理服务
