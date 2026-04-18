@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 11:43:52
+updated: 2026-04-18 11:53:52
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -46,3 +46,10 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 11:42] [medium] 检查并启动 Letta 服务
 - [ ] [AGI→OP] [2026-04-18 11:42] [medium] 刷新 OP 状态监控数据
 - [ ] [AGI→OP] [2026-04-18 11:42] [low] 调查 Charlie Hub 和 Letta 服务停止的原因（日志分析）
+- [ ] [AGI→OP] [2026-04-18 11:45] [high] 重启 Charlie Hub (Caddy) 服务，恢复 9800 端口总控 UI 与反向代理
+- [ ] [AGI→OP] [2026-04-18 11:45] [medium] 检查并恢复 Letta 服务运行状态
+- [ ] [AGI→OP] [2026-04-18 11:45] [medium] 排查 OP 监控守护进程，解决状态上报滞后问题
+- [ ] [AGI→OP] [2026-04-18 11:46] [high] 立即重启 charlie-hub 服务以恢复总控 UI 与反向代理
+- [ ] [AGI→OP] [2026-04-18 11:48] [high] 启动 charlie-hub 服务以恢复 Hub 界面和代理功能
+- [ ] [AGI→OP] [2026-04-18 11:48] [low] 执行系统状态检查以刷新 OP 监控数据
+- [ ] [AGI→OP] [2026-04-18 11:52] [high] 重启 Charlie Hub 服务以恢复 9800 端口访问
