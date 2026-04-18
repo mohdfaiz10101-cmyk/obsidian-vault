@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 10:53:50
+updated: 2026-04-18 11:03:51
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -137,3 +137,6 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 09:28] [medium] 恢复 Letta 服务运行
 - [ ] [AGI→OP] [2026-04-18 09:38] [high] 诊断并重启 OP 监控进程/定时器
 - [ ] [AGI→OP] [2026-04-18 10:52] [high] 重启 charlie-hub 服务以恢复仪表板和反向代理功能
+- [ ] [AGI→OP] [2026-04-18 10:53] [low] 检查当前高内存占用进程，必要时清理系统缓存或重启非必要服务
+- [ ] [AGI→OP] [2026-04-18 10:55] [medium] 诊断高内存占用进程，必要时释放内存或重启非关键 AI 服务
+- [ ] [AGI→OP] [2026-04-18 10:56] [low] 监控内存使用趋势，若持续增长需排查进程
