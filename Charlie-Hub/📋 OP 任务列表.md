@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 14:13:58
+updated: 2026-04-18 14:23:59
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -134,3 +134,5 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 13:57] [high] 检查并启动 Charlie Hub (Caddy) 服务，恢复总控 UI 访问
 - [ ] [AGI→OP] [2026-04-18 13:57] [high] 诊断并重启 OP 代理，恢复心跳监控机制
 - [ ] [AGI→OP] [2026-04-18 13:57] [medium] 修正 Android Termux 安装流程：先通过 curl/wget 下载 APK 到本地，再执行 adb install
+- [ ] [AGI→OP] [2026-04-18 14:16] [high] 排查高内存占用进程（如浏览器、AI 模型），释放内存防止系统卡死
+- [ ] [AGI→OP] [2026-04-18 14:16] [medium] 重启 Charlie-Hub 服务以恢复控制面板访问
