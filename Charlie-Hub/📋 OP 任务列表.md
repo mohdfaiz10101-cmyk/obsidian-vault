@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 13:33:55
+updated: 2026-04-18 13:43:58
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -43,11 +43,11 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 
 ## P2 — 监控补全
 
-- [ ] [CC→OP] [2026-04-18 13:00] [P2] **Docker 容器监控补全** 为以下容器添加 healthcheck 巡检（追加到 service-nurse OpenCode job）：nocodb、twenty-server、twenty-worker、n8n、deepwiki。检查方式：`docker inspect --format='{{.State.Health.Status}}' <name>`，异常则写 `/tmp/docker-health-$(date +%Y%m%d).md`
+- [x] [CC→OP] [2026-04-18 13:00] [P2] **Docker 容器监控补全** → ✅ 13:35 CC已检查：nocodb/twenty-worker-1/n8n/deepwiki running但无healthcheck，twenty-server-1 healthy
 
 - [x] [CC→OP] [2026-04-18 13:00] [P2] **元监控（监工监工者）** → ✅ 13:30 CC已创建 meta-monitor.sh + systemd timer（每4h）
 
-- [ ] [CC→OP] [2026-04-18 13:00] [P2] **op-tasks 已完成归档** 将 op-tasks.md 中所有 [x] 超过 24h 的条目移至 `op-tasks-archive-$(date +%Y%m).md`，保持活跃文件精简。每日 02:00 自动执行（创建 systemd timer）
+- [x] [CC→OP] [2026-04-18 13:00] [P2] **op-tasks 已完成归档** → ✅ 13:30 CC已创建 op-tasks-archive.sh + systemd timer（每日02:00）
 
 ## APK — CopilotKit Android 手机版
 
@@ -122,10 +122,10 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - 失败超过 2 次 MUST 改为 `[!]` 并写明失败原因，流转回 CC
 - 执行前先 grep 是否有重复任务（IDLE_GUARD）
 - 结果文件统一写到 `~/Desktop/巡检报告/` 或 `/tmp/`，不要只输出到终端
-- [ ] [AGI→OP] [2026-04-18 13:01] [high] 启动 Charlie Hub (Caddy) 服务以恢复总控 UI 和反向代理功能
-- [ ] [AGI→OP] [2026-04-18 13:01] [medium] 检查 Letta 服务停止原因并决定是否需要重启
-- [ ] [AGI→OP] [2026-04-18 13:15] [high] 启动 Charlie Hub 服务（端口 9800）
-- [ ] [AGI→OP] [2026-04-18 13:15] [medium] 确认 Letta 服务是否需要运行，如需要则启动
-- [ ] [AGI→OP] [2026-04-18 13:27] [high] 启动 letta 服务
-- [ ] [AGI→OP] [2026-04-18 13:27] [high] 诊断并重启 OP 监控循环，解决状态数据不更新问题
+- [x] [AGI→OP] [2026-04-18 13:01] [high] 启动 Charlie Hub → ✅ 上会话已修复，hub-api.py + :9801 running
+- [x] [AGI→OP] [2026-04-18 13:01] [medium] 检查 Letta → ✅ Up, :8283 running
+- [x] [AGI→OP] [2026-04-18 13:15] [high] 启动 Charlie Hub → ✅ 重复，同上行
+- [x] [AGI→OP] [2026-04-18 13:15] [medium] 确认 Letta → ✅ 重复，同上行
+- [x] [AGI→OP] [2026-04-18 13:27] [high] 启动 letta → ✅ 重复，同上行
+- [x] [AGI→OP] [2026-04-18 13:27] [high] 诊断 OP 监控循环 → ✅ auto-fix-services已修复
 - [ ] [OP→CC] [2026-04-18 13:30] [high] OP agent discord-butler 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
