@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 08:23:48
+updated: 2026-04-18 08:33:48
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -126,3 +126,7 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 08:13] [medium] 检查并刷新 OP 监控循环进程
 - [ ] [AGI→OP] [2026-04-18 08:18] [high] 立即重启 charlie-hub 服务 (Caddy)，恢复 9800 端口的总控 UI 访问
 - [ ] [AGI→OP] [2026-04-18 08:18] [high] 诊断并重启 OP 监控守护进程，确保系统状态数据实时更新
+- [ ] [AGI→OP] [2026-04-18 08:23] [medium] 诊断并清理高内存占用进程，释放内存资源
+- [ ] [AGI→OP] [2026-04-18 08:27] [medium] 检查占用内存最高的进程 (如 LiteLLM/Python) 并评估是否释放
+- [ ] [AGI→OP] [2026-04-18 08:28] [low] 分析内存占用详情（排查是否为缓存堆积或进程泄露）
+- [ ] [AGI→OP] [2026-04-18 08:33] [medium] 启动 letta 服务以恢复 AI 记忆上下文
