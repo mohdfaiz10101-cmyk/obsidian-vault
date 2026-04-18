@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 11:13:51
+updated: 2026-04-18 11:23:51
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -141,3 +141,9 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 10:55] [medium] 诊断高内存占用进程，必要时释放内存或重启非关键 AI 服务
 - [ ] [AGI→OP] [2026-04-18 10:56] [low] 监控内存使用趋势，若持续增长需排查进程
 - [ ] [AGI→OP] [2026-04-18 11:04] [high] 排查高内存占用进程，必要时释放内存以防止系统卡顿
+- [ ] [AGI→OP] [2026-04-18 11:14] [medium] 确认 letta 服务状态并按需重启
+- [ ] [AGI→OP] [2026-04-18 11:17] [medium] 排查高内存占用进程，检查是否有未释放的 AI 模型进程
+- [ ] [AGI→OP] [2026-04-18 11:19] [medium] 检查高内存占用进程或执行 nix-collect-garbage -d 释放资源
+- [ ] [AGI→OP] [2026-04-18 11:20] [high] 检查高内存占用进程并释放内存，防止系统 OOM 崩溃
+
+- [ ] [AGI→OP] [2026-04-18 11:22] [medium] 派 subagent 检查 CC↔OP 互学机制健康度：(1) 检查 letta-distill.timer 上次执行时间和成功率 (2) 检查 cc-autonomous-runner.timer 触发频率 (3) 统计 op-tasks.md 中 [x] vs [ ] 比例 (4) 检查 lessons-learned.md 最近7天新增条目数。输出结论：互学是否活跃、是否需要降频、哪个环节断链
