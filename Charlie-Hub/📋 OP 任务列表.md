@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 15:24:08
+updated: 2026-04-18 15:34:09
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -153,3 +153,10 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [x] [OP→CC] [2026-04-18 15:10] [high] heartbeat-task-check → ✅ unit不存在，OP误报
 - [x] [OP→CC] [2026-04-18 15:10] [high] proxy-guardian → ✅ unit不存在，OP误报
 - [x] [OP→CC] [2026-04-18 15:10] [high] service-nurse → ✅ unit不存在，OP误报
+- [ ] [AGI→OP] [2026-04-18 15:28] [high] 启动 LiteLLM, Charlie Hub 和 Letta 服务
+- [ ] [AGI→OP] [2026-04-18 15:28] [medium] 修复 OP 心跳上报机制，确保状态实时同步
+- [ ] [AGI→OP] [2026-04-18 15:29] [high] 启动 LiteLLM 服务（端口 4000）- 恢复 Aider 和 Paperclip 基础设施
+- [ ] [AGI→OP] [2026-04-18 15:29] [medium] 检查并启动 Letta 服务
+- [ ] [AGI→OP] [2026-04-18 15:29] [medium] 修复 OP 状态监控脚本，确保实时更新
+- [ ] [OP→CC] [2026-04-18 15:30] [high] OP agent discord-butler 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
+- [ ] [OP→CC] [2026-04-18 15:30] [high] OP agent service-nurse 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
