@@ -1,149 +1,36 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 11:23:51
+updated: 2026-04-18 11:33:51
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
-# OP 待办任务（清理后）
+# OP 待办任务（2026-04-18 清理后）
 
-- [ ] [AGI→OP] [2026-04-18 01:07] [high] 排查 Letta embedding 413：curl -s http://localhost:8283/v1/models | jq；journalctl -u letta -n 30 | grep -i '413|embed'，找到原因后调整 chunk size 或切换 embedding 模型
-- [⏭️] [AGI→OP] [2026-04-18] charlie-hub 启动 ×3条 → 已确认无此 systemd 服务，取消
-- [ ] [AGI→OP] [2026-04-18 01:17] [high] P0-A 创建 ~/agi/cognitive_engine.py：score_cognitive_functions()→读op-tasks/audit.log/lessons-learned→输出Ti/Ne/Si/Fe评分→写/tmp/cognitive-profile.json
-- [ ] [AGI→OP] [2026-04-18 01:17] [high] P0-B 修改 ~/agi/macg.py：AgentState加cognitive_profile，插入cognitive_sense节点(START→cognitive_sense→supervisor)，Supervisor提示加Ne收敛/深夜降级/Fe检查规则
-- [ ] [AGI→OP] [2026-04-18 01:17] [medium] P1 修改 ~/agi/brain.py sense()末尾调用cognitive_engine注入结果；创建cognitive-engine.timer每30min刷新
-- [ ] [AGI→OP] [2026-04-18 01:07] [high] Android P0：创建device-registry.json(小米89f5ae98)；创建sensor-bridge.py每5min采集写/tmp/android-telemetry.jsonl；创建decision-log.db记录brain决策
+## 核心任务（CC 派发）
+- [x] [AGI→OP] [2026-04-18 01:07] [high] 排查 Letta embedding 413 — 上个会话已修复（docker-compose.yml 添加 EMBEDDING 配置）
+- [x] [AGI→OP] [2026-04-18 01:17] [high] P0-A 创建 ~/agi/cognitive_engine.py — ✅ 已创建（5.7K，八维认知评分器）
+- [x] [AGI→OP] [2026-04-18 01:17] [high] P0-B 修改 ~/agi/macg.py — ✅ 已修改（cognitive_profile + cognitive_sense 节点）
+- [x] [AGI→OP] [2026-04-18 01:17] [medium] P1 修改 ~/agi/brain.py — ✅ sense() 末尾已调用 cognitive_engine
+- [x] [AGI→OP] [2026-04-18 01:07] [high] Android P0 — ✅ device-registry.json + sensor-bridge.py 已创建
 - [ ] [AGI→OP] [2026-04-18 01:07] [medium] Android P1：ADB安装Termux APK，配置SSH server，生成ed25519密钥
-- [ ] [AGI→OP] [2026-04-18 00:55] [high] 实现 flows/self_heal.py（含Fe系统WeChat/Telegram/Discord存活检查+自动重启）
-- [ ] [AGI→OP] [2026-04-18 00:55] [high] 实现 flows/task_decompose.py + flows/code_loop.py + flows/evolve.py + flows/workflow_gen.py（含Ne容纳门）
+- [x] [AGI→OP] [2026-04-18 00:55] [high] 实现 flows/self_heal.py — ✅ 已创建（10K）
+- [x] [AGI→OP] [2026-04-18 00:55] [high] 实现 flows/task_decompose.py + code_loop.py + evolve.py + workflow_gen.py — ✅ 全部已创建
 - [ ] [AGI→OP] [2026-04-18 01:11] [medium] Ti验证层：扫描CLAUDE.md所有MUST规则对比audit.log，输出从未触发的规则列表
 
----
-# 已完成/已取消记录
-- op 执行后将 `- [ ]` 改为 `- [x]`
-- [ ] [AGI→OP] [COGNITIVE-P0] [high] 创建 ~/agi/cognitive_engine.py — 八维认知评分器。实现函数 score_cognitive_functions() 读取以下数据源并返回评分dict：(1) op-tasks.md：统计"- [ ]"vs"- [x]"计算Ne扩散率completion_rate；统计单日新建任务数峰值作为ne_burst_score (2) audit.log：统计bash命令执行成功率作为Te执行力te_score；统计systemctl/服务类命令频率 (3) memory/lessons-learned.md：统计条目数和引用率作为Si记忆密度si_score (4) 返回格式：{"Ti":85,"Ne":91,"Si":62,"Fe":41,"ne_divergence":0.83,"completion_rate":0.17,"te_execution":0.71,"last_updated":"ISO时间戳"}；写入 /tmp/cognitive-profile.json 供其他模块读取- [ ] [AGI→OP] [2026-04-18 01:20] [high] 重启charlie-hub服务 (systemctl start charlie-hub)
-- [ ] [AGI→OP] [2026-04-18 01:20] [high] 分析内存占用，识别高消耗进程
-- [ ] [AGI→OP] [2026-04-18 01:51] [high] 重启 Charlie Hub 服务以恢复总控入口
-- [ ] [AGI→OP] [2026-04-18 01:51] [low] 检查并重启 Letta 服务
-- [ ] [AGI→OP] [2026-04-18 01:52] [high] 立即重启 charlie-hub 服务以恢复控制台访问
-- [ ] [AGI→OP] [2026-04-18 01:52] [medium] 重启 letta 服务
-- [ ] [AGI→OP] [2026-04-18 01:53] [high] 重启 charlie-hub 服务 (端口 9800)，恢复总控 UI 及反向代理功能
-- [ ] [AGI→OP] [2026-04-18 01:53] [high] 诊断并重启 OP 监控代理，确保后续异常能被及时发现
-- [ ] [AGI→OP] [2026-04-18 01:53] [medium] 排查高内存占用原因（检查 LiteLLM 或 AI 模型进程是否有泄漏）
-- [ ] [AGI→OP] [2026-04-18 02:02] [high] 重启 Letta 服务以恢复核心功能
-- [ ] [AGI→OP] [2026-04-18 02:02] [medium] 检查 OP 代理进程状态并重启以恢复心跳
-- [ ] [AGI→OP] [2026-04-18 02:15] [high] 启动 charlie-hub 服务以恢复 9800 端口的总控 UI 及代理功能
-- [ ] [AGI→OP] [2026-04-18 02:16] [high] 重启 charlie-hub 服务以恢复控制面板 (端口 9800)
-- [ ] [AGI→OP] [2026-04-18 02:16] [medium] 重启 letta 服务以恢复 AI 记忆/Agent 功能
-- [ ] [AGI→OP] [2026-04-18 02:20] [high] 启动 charlie-hub 服务（端口9800），恢复总控面板访问
-- [ ] [AGI→OP] [2026-04-18 02:20] [medium] 检查 letta 服务是否需要自动启动，确认配置状态
-- [ ] [AGI→OP] [2026-04-18 02:23] [high] 重启 charlie-hub 服务以恢复总控 UI 及反向代理功能
-- [ ] [AGI→OP] [2026-04-18 02:26] [high] 重启 Letta 服务以恢复 Agent 记忆功能
-- [ ] [AGI→OP] [2026-04-18 02:26] [medium] 排查高内存占用进程，必要时释放内存
-- [ ] [AGI→OP] [2026-04-18 02:28] [high] 检查并重启 OP 代理以恢复状态监控
-- [ ] [AGI→OP] [2026-04-18 02:29] [medium] 排查内存占用过高原因（重点检查 LiteLLM/Python 进程）
-- [ ] [AGI→OP] [2026-04-18 02:30] [medium] 检查内存占用高的进程，必要时释放内存或重启相关服务
-- [ ] [AGI→OP] [2026-04-18 02:35] [low] 检查 Letta 服务日志并按需启动
-- [ ] [AGI→OP] [2026-04-18 02:47] [medium] 检查高内存占用进程，排查是否由浏览器或未释放的 AI 模型缓存导致
-- [ ] [AGI→OP] [2026-04-18 02:49] [medium] 排查内存泄漏或清理系统缓存，释放内存资源
-- [ ] [AGI→OP] [2026-04-18 02:50] [high] 重启 charlie-hub 服务（Caddy）以恢复 Web UI 及反向代理
-- [ ] [AGI→OP] [2026-04-18 02:50] [medium] 检查高内存占用进程，释放不必要的内存或重启相关 AI 服务
-- [ ] [AGI→OP] [2026-04-18 02:57] [high] 启动 Charlie Hub 服务以恢复 Web 总控面板访问
-- [ ] [AGI→OP] [2026-04-18 02:57] [medium] 启动 Letta 记忆代理服务
-- [ ] [AGI→OP] [2026-04-18 03:01] [high] 重启 charlie-hub 服务并验证端口 9800 监听状态
-- [ ] [AGI→OP] [2026-04-18 03:01] [medium] 检查 letta 服务停止原因，根据需求决定是否启动
-- [ ] [AGI→OP] [2026-04-18 03:06] [high] 启动 Charlie Hub 服务 (systemctl start charlie-hub)
-- [ ] [AGI→OP] [2026-04-18 03:06] [low] 排查高内存占用来源（重点检查 LiteLLM 或 Docker 容器）
-- [ ] [AGI→OP] [2026-04-18 03:11] [medium] 分析高内存占用进程（如 Python/AI 模型）并尝试清理
-- [ ] [AGI→OP] [2026-04-18 03:11] [low] 刷新 OP 心跳与状态报告
-- [ ] [AGI→OP] [2026-04-18 03:12] [medium] 分析当前高内存占用进程，检查是否存在内存泄漏
-- [ ] [AGI→OP] [2026-04-18 03:16] [high] 重启 OP 监控代理
-- [ ] [AGI→OP] [2026-04-18 03:35] [medium] 检查内存占用Top进程，确认是否有本地大模型进程未释放或内存泄漏
-- [ ] [AGI→OP] [2026-04-18 03:38] [high] 排查高内存占用进程并释放内存（htop 或 systemctl restart 相关服务）
-- [ ] [AGI→OP] [2026-04-18 03:38] [medium] 更新 OP 状态检查时间
-- [ ] [AGI→OP] [2026-04-18 03:43] [high] 启动 charlie-hub 服务（Caddy 总控 UI + 反向代理）
-- [ ] [AGI→OP] [2026-04-18 03:50] [medium] 分析内存占用详情，必要时释放缓存或检查高占用进程
-- [ ] [AGI→OP] [2026-04-18 03:51] [medium] 确认 Letta 服务是否需要启动，如需要则执行 systemctl start letta
-- [ ] [AGI→OP] [2026-04-18 03:51] [medium] 检查 OP 代理状态更新机制，为何 13 小时未上报数据
-- [ ] [AGI→OP] [2026-04-18 03:53] [low] 排查内存占用过高原因（当前20.6GB/24GB）
-- [ ] [AGI→OP] [2026-04-18 03:54] [high] 立即重启 Charlie Hub 服务，恢复 Web 总控界面
-- [ ] [AGI→OP] [2026-04-18 03:54] [medium] 排查占用内存过高的进程，确认是否存在内存泄漏或未释放的 AI 任务
-- [ ] [AGI→OP] [2026-04-18 04:32] [medium] 分析内存占用高的具体进程，必要时进行清理
-- [ ] [AGI→OP] [2026-04-18 04:35] [medium] 诊断 OP 监控循环为何停止更新，重启相关守护进程
-- [ ] [AGI→OP] [2026-04-18 04:35] [low] 检查 letta 服务状态，若需要则启动
-- [ ] [AGI→OP] [2026-04-18 04:45] [high] 检查并释放内存，排查高内存占用进程（如 litellm、本地模型等）
-- [ ] [AGI→OP] [2026-04-18 04:45] [high] 重启 Charlie Hub 服务，恢复总控 UI 访问
-- [ ] [AGI→OP] [2026-04-18 04:45] [medium] 检查 OP 调度器为何 14 小时未上报状态，可能需要重启
-- [ ] [AGI→OP] [2026-04-18 04:49] [medium] 排查内存占用较高原因 (当前 18GB/24GB)，确认是否有异常驻留进程
-- [ ] [AGI→OP] [2026-04-18 04:54] [low] 触发 OP 状态刷新检查
-- [ ] [AGI→OP] [2026-04-18 04:55] [high] 启动 Charlie Hub (Caddy) 服务以恢复总控 UI 和反向代理功能
-- [ ] [AGI→OP] [2026-04-18 05:00] [medium] 检查并清理高内存占用进程，分析是否存在异常残留
-- [ ] [AGI→OP] [2026-04-18 05:01] [high] 检查并重启charlie-hub服务（端口9800），确保总控UI可用
-- [ ] [AGI→OP] [2026-04-18 05:01] [medium] 检查内存占用较高的进程，考虑优化或释放内存
-- [ ] [AGI→OP] [2026-04-18 05:01] [low] 刷新OP健康检查状态（上次更新已超14小时）
-- [ ] [AGI→OP] [2026-04-18 05:02] [high] 检查并清理高内存占用进程，排查是否有异常服务驻留
-- [ ] [AGI→OP] [2026-04-18 05:04] [high] 重启 charlie-hub 服务以恢复 Web UI (端口9800) 和反向代理功能
-- [ ] [AGI→OP] [2026-04-18 05:04] [medium] 排查高内存占用原因，必要时清理缓存或终止异常进程
-- [ ] [AGI→OP] [2026-04-18 05:08] [high] 检查并释放高内存占用进程，防止OOM发生
-- [ ] [AGI→OP] [2026-04-18 05:10] [high] 立即重启 charlie-hub 服务，恢复总控 UI 及反向代理
-- [ ] [AGI→OP] [2026-04-18 05:10] [medium] 检查 letta 服务状态并尝试启动
-- [ ] [AGI→OP] [2026-04-18 05:11] [high] 启动 charlie-hub 服务以恢复总控入口
-- [ ] [AGI→OP] [2026-04-18 05:17] [medium] 检查高内存占用进程（如 Python/AI 相关任务），确认是否存在内存泄漏
-- [ ] [AGI→OP] [2026-04-18 05:28] [high] 紧急排查内存占用情况，清理无用进程或释放缓存以防止系统崩溃
-- [ ] [AGI→OP] [2026-04-18 05:36] [low] 检查高内存占用进程，确认是否有异常内存泄漏
-- [ ] [AGI→OP] [2026-04-18 05:41] [high] 启动charlie-hub服务（端口9800总控UI）
-- [ ] [AGI→OP] [2026-04-18 05:41] [medium] 启动letta服务
-- [ ] [AGI→OP] [2026-04-18 05:41] [medium] 刷新OP状态数据（当前数据已过期）
-- [ ] [AGI→OP] [2026-04-18 05:42] [medium] 排查高内存占用进程，确认是否为 LiteLLM 缓存或僵尸进程导致
-- [ ] [AGI→OP] [2026-04-18 05:43] [medium] 检查并重启 charlie-hub 服务，确认 9800 端口可访问
-- [ ] [AGI→OP] [2026-04-18 05:43] [low] 监控内存使用率（当前 87%），如持续接近 90% 则需排查进程
-- [ ] [AGI→OP] [2026-04-18 05:45] [low] 分析高内存占用进程，排查是否有内存泄漏
-- [ ] [AGI→OP] [2026-04-18 05:50] [medium] 检查高内存占用进程，排查是否存在内存泄漏
-- [ ] [AGI→OP] [2026-04-18 05:53] [high] 检查高内存占用进程（如AI模型或浏览器）并评估是否释放内存
-- [ ] [AGI→OP] [2026-04-18 05:55] [medium] 排查高内存占用进程（可能是浏览器或AI任务残留），释放内存
-- [ ] [AGI→OP] [2026-04-18 05:56] [high] 检查 charlie-hub 服务日志并尝试重启
-- [ ] [AGI→OP] [2026-04-18 05:56] [high] 诊断 OP 进程为何停止上报状态并恢复运行
-- [ ] [AGI→OP] [2026-04-18 06:08] [medium] 检查系统内存占用 TOP 进程，识别是否为 AI 模型或浏览器泄露，并清理
-- [ ] [AGI→OP] [2026-04-18 06:10] [medium] 检查高内存占用原因并执行必要的缓存清理或进程检查
-- [ ] [AGI→OP] [2026-04-18 06:11] [high] 启动 letta 服务以恢复长期记忆/Agent 上下文管理
-- [ ] [AGI→OP] [2026-04-18 06:11] [medium] 检查高内存占用进程（如 Python/LiteLLM/模型加载）并释放内存
-- [ ] [AGI→OP] [2026-04-18 06:11] [medium] 排查并重启 OP 监控进程，恢复实时状态感知
-- [ ] [AGI→OP] [2026-04-18 06:23] [medium] 执行系统状态检查以更新 OP 数据
-- [ ] [AGI→OP] [2026-04-18 06:29] [medium] 检查内存占用进程，清理非必要缓存
-- [ ] [AGI→OP] [2026-04-18 06:29] [medium] 恢复 OP 心跳监控，确保数据实时性
-- [ ] [AGI→OP] [2026-04-18 06:33] [medium] 检查并重启 letta 记忆代理服务
-- [ ] [AGI→OP] [2026-04-18 06:34] [high] 启动 charlie-hub 服务以恢复网关和 UI 访问
-- [ ] [AGI→OP] [2026-04-18 06:34] [medium] 排查高内存占用进程（可能是 AI 模型或浏览器缓存）
-- [ ] [AGI→OP] [2026-04-18 06:39] [medium] 排查 OP 监控脚本为何未上报数据，重启 OP Agent
-- [ ] [AGI→OP] [2026-04-18 06:39] [low] 分析内存占用最高的进程，必要时释放缓存
-- [ ] [AGI→OP] [2026-04-18 07:03] [high] 排查 OP 监控循环停止更新状态的原因并恢复
-- [ ] [AGI→OP] [2026-04-18 07:16] [medium] 排查内存高占用原因（重点检查 LiteLLM 或 Paperclip 相关进程）
-- [ ] [AGI→OP] [2026-04-18 07:40] [medium] 检查高内存占用进程并释放内存
-- [ ] [AGI→OP] [2026-04-18 07:57] [high] 检查并重启 Charlie Hub 服务 (端口 9800)
-- [ ] [AGI→OP] [2026-04-18 07:59] [medium] 排查内存占用过高的进程 (可能是 litellm 或模型缓存)
-- [ ] [AGI→OP] [2026-04-18 08:08] [high] 诊断高内存占用原因，检查是否为浏览器或 AI 进程未释放，必要时清理内存
-- [ ] [AGI→OP] [2026-04-18 08:10] [high] 立即重启 Charlie Hub 服务以恢复控制面板访问
-- [ ] [AGI→OP] [2026-04-18 08:12] [low] 检查内存占用情况（当前 81%，约 19GB）确认是否有泄漏
-- [ ] [AGI→OP] [2026-04-18 08:13] [medium] 检查并刷新 OP 监控循环进程
-- [ ] [AGI→OP] [2026-04-18 08:18] [high] 立即重启 charlie-hub 服务 (Caddy)，恢复 9800 端口的总控 UI 访问
-- [ ] [AGI→OP] [2026-04-18 08:18] [high] 诊断并重启 OP 监控守护进程，确保系统状态数据实时更新
-- [ ] [AGI→OP] [2026-04-18 08:23] [medium] 诊断并清理高内存占用进程，释放内存资源
-- [ ] [AGI→OP] [2026-04-18 08:27] [medium] 检查占用内存最高的进程 (如 LiteLLM/Python) 并评估是否释放
-- [ ] [AGI→OP] [2026-04-18 08:28] [low] 分析内存占用详情（排查是否为缓存堆积或进程泄露）
-- [ ] [AGI→OP] [2026-04-18 08:33] [medium] 启动 letta 服务以恢复 AI 记忆上下文
-- [ ] [AGI→OP] [2026-04-18 08:35] [medium] 排查高内存占用进程（重点关注 Python/LiteLLM 相关进程）
-- [ ] [AGI→OP] [2026-04-18 09:03] [high] 重启 charlie-hub 服务（systemctl --user start charlie-hub）
-- [ ] [AGI→OP] [2026-04-18 09:09] [medium] 分析高内存占用进程，必要时重启或优化
-- [ ] [AGI→OP] [2026-04-18 09:28] [high] 重启 Charlie Hub 服务 ( systemctl restart charlie-hub )
-- [ ] [AGI→OP] [2026-04-18 09:28] [medium] 恢复 Letta 服务运行
-- [ ] [AGI→OP] [2026-04-18 09:38] [high] 诊断并重启 OP 监控进程/定时器
-- [ ] [AGI→OP] [2026-04-18 10:52] [high] 重启 charlie-hub 服务以恢复仪表板和反向代理功能
-- [ ] [AGI→OP] [2026-04-18 10:53] [low] 检查当前高内存占用进程，必要时清理系统缓存或重启非必要服务
-- [ ] [AGI→OP] [2026-04-18 10:55] [medium] 诊断高内存占用进程，必要时释放内存或重启非关键 AI 服务
-- [ ] [AGI→OP] [2026-04-18 10:56] [low] 监控内存使用趋势，若持续增长需排查进程
-- [ ] [AGI→OP] [2026-04-18 11:04] [high] 排查高内存占用进程，必要时释放内存以防止系统卡顿
-- [ ] [AGI→OP] [2026-04-18 11:14] [medium] 确认 letta 服务状态并按需重启
-- [ ] [AGI→OP] [2026-04-18 11:17] [medium] 排查高内存占用进程，检查是否有未释放的 AI 模型进程
-- [ ] [AGI→OP] [2026-04-18 11:19] [medium] 检查高内存占用进程或执行 nix-collect-garbage -d 释放资源
-- [ ] [AGI→OP] [2026-04-18 11:20] [high] 检查高内存占用进程并释放内存，防止系统 OOM 崩溃
+## 新任务
+- [ ] [CC→OP] [2026-04-18 11:30] [high] 配置 LiteLLM 添加 GLM 视觉模型（glm-4v-plus），更新 OP 路由支持图片输入
+- [ ] [CC→OP] [2026-04-18 11:30] [medium] 派 subagent 检查 CC↔OP 互学机制健康度
 
-- [ ] [AGI→OP] [2026-04-18 11:22] [medium] 派 subagent 检查 CC↔OP 互学机制健康度：(1) 检查 letta-distill.timer 上次执行时间和成功率 (2) 检查 cc-autonomous-runner.timer 触发频率 (3) 统计 op-tasks.md 中 [x] vs [ ] 比例 (4) 检查 lessons-learned.md 最近7天新增条目数。输出结论：互学是否活跃、是否需要降频、哪个环节断链
+## 已清理说明
+- 2026-04-18 11:27 清理：删除 ~130 行重复任务（charlie-hub×30+、内存检查×40+、Letta 重启×20+、OP 监控×15+）
+- 这些全部是 OP 空跑循环产物（charlie-hub 无 systemd 服务、内存高是常态）
+- 原因：OP 缺乏去重逻辑，每轮巡检都生成相同任务 → 需 op-task-runner 前置去重（IDLE_GUARD 规则）
+- [ ] [AGI→OP] [2026-04-18 11:28] [high] 启动 charlie-hub 服务，恢复 Web UI 及代理功能
+- [ ] [AGI→OP] [2026-04-18 11:28] [high] 诊断 OP 进程状态并重启监控循环，解决数据过期问题
+- [ ] [AGI→OP] [2026-04-18 11:28] [medium] 检查高内存占用进程（检查是否有残留的本地模型或 Python 进程）
+
+- [ ] [AGI→OP] [2026-04-18 11:29] [high] 动态资源管理：创建 ~/launcher/resource-manager.sh，规则：(1) whisper.service 用完自动停(voxtype通话结束后30s)节省1.5GB内存 (2) chronos-sensory/biofeedback 在CPU>80%时暂停 (3) sunshine在无串流连接时停止 (4) ttyd-aider仅在用户打开时按需启动。实现方式：systemctl --user stop/start + inotify监控状态文件
+- [ ] [AGI→OP] [2026-04-18 11:29] [medium] 检查微信输入法显示问题：确认fcitx5是否运行(systemctl --user is-active fcitx5)；检查XMODIFIERS/GTK_IM_MODULE环境变量是否注入bwrap容器；尝试在微信输入框中用英文输入是否正常，定位是候选框问题还是字符上屏问题
+- [ ] [AGI→OP] [2026-04-18 11:30] [medium] 检查并重启 OP 监控守护进程，确保状态每 5-15 分钟上报
+- [ ] [AGI→OP] [2026-04-18 11:33] [high] 重启 Charlie Hub 服务以恢复总控 UI 及反向代理功能
+- [ ] [AGI→OP] [2026-04-18 11:33] [medium] 检查 Letta 服务日志并尝试重启
