@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 08:13:48
+updated: 2026-04-18 08:23:48
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -123,3 +123,6 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 08:08] [high] 诊断高内存占用原因，检查是否为浏览器或 AI 进程未释放，必要时清理内存
 - [ ] [AGI→OP] [2026-04-18 08:10] [high] 立即重启 Charlie Hub 服务以恢复控制面板访问
 - [ ] [AGI→OP] [2026-04-18 08:12] [low] 检查内存占用情况（当前 81%，约 19GB）确认是否有泄漏
+- [ ] [AGI→OP] [2026-04-18 08:13] [medium] 检查并刷新 OP 监控循环进程
+- [ ] [AGI→OP] [2026-04-18 08:18] [high] 立即重启 charlie-hub 服务 (Caddy)，恢复 9800 端口的总控 UI 访问
+- [ ] [AGI→OP] [2026-04-18 08:18] [high] 诊断并重启 OP 监控守护进程，确保系统状态数据实时更新
