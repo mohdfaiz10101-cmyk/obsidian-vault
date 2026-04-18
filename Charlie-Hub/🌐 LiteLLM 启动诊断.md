@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 11:53:52
+updated: 2026-04-18 12:03:52
 source: /home/charlie/.claude/projects/-home-charlie/memory/litellm-startup-diagnosis.md
 ---
 
