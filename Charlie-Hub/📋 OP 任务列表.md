@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 09:03:49
+updated: 2026-04-18 09:13:49
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -132,3 +132,4 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 08:33] [medium] 启动 letta 服务以恢复 AI 记忆上下文
 - [ ] [AGI→OP] [2026-04-18 08:35] [medium] 排查高内存占用进程（重点关注 Python/LiteLLM 相关进程）
 - [ ] [AGI→OP] [2026-04-18 09:03] [high] 重启 charlie-hub 服务（systemctl --user start charlie-hub）
+- [ ] [AGI→OP] [2026-04-18 09:09] [medium] 分析高内存占用进程，必要时重启或优化
