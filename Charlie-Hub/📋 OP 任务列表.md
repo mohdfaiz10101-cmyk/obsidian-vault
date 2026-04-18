@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 08:33:48
+updated: 2026-04-18 08:43:48
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -130,3 +130,4 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 08:27] [medium] 检查占用内存最高的进程 (如 LiteLLM/Python) 并评估是否释放
 - [ ] [AGI→OP] [2026-04-18 08:28] [low] 分析内存占用详情（排查是否为缓存堆积或进程泄露）
 - [ ] [AGI→OP] [2026-04-18 08:33] [medium] 启动 letta 服务以恢复 AI 记忆上下文
+- [ ] [AGI→OP] [2026-04-18 08:35] [medium] 排查高内存占用进程（重点关注 Python/LiteLLM 相关进程）
