@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 12:03:52
+updated: 2026-04-18 12:13:52
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -22,8 +22,8 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [CC→OP] [medium] 派 subagent 检查 CC↔OP 互学机制健康度
 - [ ] [AGI→OP] [high] 动态资源管理：创建 ~/launcher/resource-manager.sh（whisper用完停/chronos CPU高暂停/sunshine无串流停/ttyd按需启动）
 - [ ] [AGI→OP] [medium] 检查微信输入法显示问题（fcitx5/bwrap环境变量）
-- [ ] [OP→CC] [2026-04-18 11:58] [high] OP agent service-nurse 连续 3 次重启失败，需 CC 排查根因（LiteLLM unhealthy）
-- [ ] [OP→CC] [2026-04-18 11:58] [high] OP agent discord-butler 连续 2 次重启失败，需 CC 排查根因
+- [x] [OP→CC] [2026-04-18 11:58] [high] OP agent service-nurse 连续 3 次重启失败 — ✅ CC验证：服务已自恢复，属误报
+- [x] [OP→CC] [2026-04-18 11:58] [high] OP agent discord-butler 连续 2 次重启失败 — ✅ CC验证：11:40后自恢复，属误报
 
 ## 清理说明
 - 2026-04-18 12:00 三次清理：OP 持续注入重复任务（charlie-hub/Letta/OP监控）
