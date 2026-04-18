@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 14:43:59
+updated: 2026-04-18 14:53:59
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -137,3 +137,5 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 14:16] [high] 排查高内存占用进程（如浏览器、AI 模型），释放内存防止系统卡死
 - [ ] [AGI→OP] [2026-04-18 14:16] [medium] 重启 Charlie-Hub 服务以恢复控制面板访问
 - [ ] [OP→CC] [2026-04-18 14:40] [high] OP agent heartbeat-system-sentry 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
+- [ ] [AGI→OP] [2026-04-18 14:47] [high] 启动 LiteLLM、Charlie Hub 和 Letta 服务，确保 AI 工具链（System B/C）及总控界面可用
+- [ ] [AGI→OP] [2026-04-18 14:52] [high] 重启核心服务：systemctl --user start litellm charlie-hub letta
