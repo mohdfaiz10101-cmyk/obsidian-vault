@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 13:23:54
+updated: 2026-04-18 13:33:55
 source: /home/charlie/.claude/projects/-home-charlie/memory/litellm-deployment.md
 ---
 
