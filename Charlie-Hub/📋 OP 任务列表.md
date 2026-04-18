@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 12:13:52
+updated: 2026-04-18 12:23:52
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -25,11 +25,8 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [x] [OP→CC] [2026-04-18 11:58] [high] OP agent service-nurse 连续 3 次重启失败 — ✅ CC验证：服务已自恢复，属误报
 - [x] [OP→CC] [2026-04-18 11:58] [high] OP agent discord-butler 连续 2 次重启失败 — ✅ CC验证：11:40后自恢复，属误报
 
-## 清理说明
+## 清理记录
 - 2026-04-18 12:00 三次清理：OP 持续注入重复任务（charlie-hub/Letta/OP监控）
-- charlie-hub 无 systemd 服务 → 所有重启命令必然失败 → 已删除 ~30 行
-- 内存高是常态 → 已删除 ~10 行
-- 根因：OP 调度器未实现 IDLE_GUARD 去重规则
-- [ ] [AGI→OP] [2026-04-18 12:00] [high] 启动 charlie-hub 服务以恢复总控 UI 与反向代理
-- [ ] [AGI→OP] [2026-04-18 12:00] [medium] 检查并重启 OP 监控守护进程，确保状态实时同步
-- [ ] [AGI→OP] [2026-04-18 12:01] [low] 同步并刷新 OP 代理的最新健康检查数据
+- 2026-04-18 16:00 第四次清理：charlie-hub(×2)/OP监控/代理刷新/Letta重启 → 全部空跑产物，charlie-hub 不存在
+- 根因：OP 调度器未实现 IDLE_GUARD 去重规则，需在 AGENTS.md 中强化
+- [ ] [OP→CC] [2026-04-18 12:20] [high] OP agent discord-butler 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
