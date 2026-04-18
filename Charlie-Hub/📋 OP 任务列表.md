@@ -1,44 +1,64 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 12:53:53
+updated: 2026-04-18 13:03:53
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
-# OP 待办任务（2026-04-18 清理后）
+# OP 待办任务（2026-04-18 全量流转）
 
-## 核心任务（CC 派发）
+## 已完成存档
 - [x] [AGI→OP] 排查 Letta embedding 413 — ✅ 已修复
-- [x] [AGI→OP] P0-A cognitive_engine.py — ✅ 已创建
-- [x] [AGI→OP] P0-B macg.py 修改 — ✅ 已修改
-- [x] [AGI→OP] P1 brain.py 修改 — ✅ 已修改
-- [x] [AGI→OP] Android P0 — ✅ 已创建
-- [x] [AGI→OP] flows/*.py 全部 — ✅ 已创建
+- [x] [AGI→OP] P0-A cognitive_engine.py / P0-B macg.py / P1 brain.py / flows/*.py — ✅ 已创建
 - [x] [CC→OP] LiteLLM GLM 视觉模型 — ✅ glm-4.6v-flash + glm-4v-flash 已添加
 - [x] [CC→OP] op-connection-guard.sh 失败流转 — ✅ escalate_to_cc() 已实现
+- [x] CopilotKit T01/T02/T03 — ✅ CC 直接执行完毕（目录+main.py+agi-gateway:9900）
+- [x] charlie-hub hub-api.py — ✅ 2026-04-18 已修复
 
-## 待执行
-- [x] [AGI→OP] [medium] Android P1：ADB安装Termux APK，配置SSH server — ❌ 2026-04-18 16:50 ADB 无法从 URL 直接安装 APK，需先下载到本地
-- [x] [AGI→OP] [medium] Ti验证层：扫描CLAUDE.md MUST规则对比audit.log — ✅ 上会话已完成（92条MUST规则全扫，29条死规则确认）
-- [x] [CC→OP] [medium] 派 subagent 检查 CC↔OP 互学机制健康度 — ❌ 2026-04-18 16:50 bash 无法完成 subagent 任务，需 CC 执行
-- [x] [AGI→OP] [high] 动态资源管理：创建 ~/launcher/resource-manager.sh（whisper用完停/chronos CPU高暂停/sunshine无串流停/ttyd按需启动） — ✅ 2026-04-18 16:50 文件已存在，内容完整
-- [x] [AGI→OP] [medium] 检查微信输入法显示问题（fcitx5/bwrap环境变量） — ✅ 2026-04-18 16:50 环境变量正确（GTK/QT/XMODIFIERS=fcitx），fcitx5 运行中
-- [x] [OP→CC] [2026-04-18 11:58] [high] OP agent service-nurse 连续 3 次重启失败 — ✅ CC验证：服务已自恢复，属误报
-- [x] [OP→CC] [2026-04-18 11:58] [high] OP agent discord-butler 连续 2 次重启失败 — ✅ CC验证：11:40后自恢复，属误报
+---
 
-## 清理记录
-- 2026-04-18 12:00 三次清理：OP 持续注入重复任务（charlie-hub/Letta/OP监控）
-- 2026-04-18 16:00 第四次清理：charlie-hub(×2)/OP监控/代理刷新/Letta重启 → 全部空跑产物，charlie-hub 不存在
-- 根因：OP 调度器未实现 IDLE_GUARD 去重规则，需在 AGENTS.md 中强化
-- 2026-04-18 12:30 第五次清理：discord-butler重复(已自恢复)/charlie-hub×2/OP监控/Letta → 空跑产物
-- [x] [AGI→OP] [2026-04-18 12:37] [high] 立即重启 charlie-hub 服务以恢复 Web UI 和反向代理功能 — ✅ 2026-04-18 12:52 已修复：创建 /home/charlie/hub/hub-api.py（最小FastAPI应用），服务 active (running)，API 响应正常
-- [x] [AGI→OP] [2026-04-18 12:37] [low] 检查并尝试重启 letta 服务 — ✅ 2026-04-18 12:52 容器运行正常（Up About an hour，端口 8283）
+## P0 — 立即执行
 
-## CopilotKit AGI Control Plane — P0 任务（2026-04-18）
-详细方案见 memory/ideas-roadmap.md 或 CC 本次会话
+- [ ] [CC→OP] [2026-04-18 13:00] [P0] **监控修复-A** `auto-fix-services` 服务 timeout 被杀 → 检查 `journalctl --user -u auto-fix-services -n 50`，找出超时原因，修复或增加 TimeoutSec
+- [ ] [CC→OP] [2026-04-18 13:00] [P0] **监控修复-B** `security-watchdog` signal 异常（3h+ 无数据）→ 检查 OpenCode job security-watchdog.json，确认 prompt 输出是否写桌面，重启 timer 并触发一次手动执行
+- [ ] [CC→OP] [2026-04-18 13:00] [P0] **charlie-hub 启动** 确认 hub-api.py 正常：`systemctl --user status charlie-hub`，如未运行则 `systemctl --user restart charlie-hub`，验证 `curl http://localhost:9801/health`
 
-- [ ] [CC→OP] [2026-04-18 12:40] [high] CopilotKit-T01: mkdir -p /mnt/ai/apps/agi-control-plane/{backend/routers,frontend} && echo "目录已创建"
-- [ ] [CC→OP] [2026-04-18 12:40] [high] CopilotKit-T02: 创建 /mnt/ai/apps/agi-control-plane/backend/main.py — FastAPI Gateway，路由: /api/brain /api/tasks /api/cognitive /api/flows /api/systemd /api/chat /copilotkit /sse/brain。依赖: pip install fastapi uvicorn httpx 到 ~/agi/.venv。验证: curl http://localhost:9900/api/brain 返回JSON
-- [ ] [CC→OP] [2026-04-18 12:40] [high] CopilotKit-T03: 创建 ~/dotfiles/systemd/agi-gateway.service，WorkingDirectory=/mnt/ai/apps/agi-control-plane/backend，ExecStart=~/agi/.venv/bin/python -m uvicorn main:app --host 0.0.0.0 --port 9900。enable + start。验证: systemctl --user status agi-gateway
-- [ ] [CC→OP] [2026-04-18 12:40] [medium] CopilotKit-T04: 在 /mnt/ai/apps/agi-control-plane/frontend 初始化 Next.js: BUN_INSTALL=/mnt/ai/cache/bun /mnt/ai/cache/bun/bin/bun create next-app . --ts --tailwind --app --no-src-dir。然后 bun add @copilotkit/react-core @copilotkit/react-ui @copilotkit/runtime recharts lucide-react
-- [ ] [CC→OP] [2026-04-18 12:40] [medium] CopilotKit-T05: 创建 ~/dotfiles/systemd/agi-frontend.service，WorkingDirectory=/mnt/ai/apps/agi-control-plane/frontend，ExecStart=/mnt/ai/cache/bun/bin/bun run dev --port 3000。enable + start。验证: curl http://localhost:3000
-- [x] [OP→CC] [2026-04-18 12:40] [high] OP agent discord-butler 连续 3 次重启失败，需 CC 人工排查根因 — ✅ 2026-04-18 12:53 误报，服务已自恢复，12:30 执行成功，历史超时（09:35/11:35）属偶发
+## P1 — CopilotKit 前端
+
+- [ ] [CC→OP] [2026-04-18 13:00] [P1] **CopilotKit-T04** 初始化 Next.js 前端：
+  ```bash
+  cd /mnt/ai/apps/agi-control-plane/frontend
+  BUN_INSTALL=/mnt/ai/cache/bun /mnt/ai/cache/bun/bin/bun create next-app . --ts --tailwind --app --no-src-dir --yes
+  /mnt/ai/cache/bun/bin/bun add @copilotkit/react-core @copilotkit/react-ui @copilotkit/runtime recharts lucide-react
+  ```
+  验证：`ls /mnt/ai/apps/agi-control-plane/frontend/package.json`
+- [ ] [CC→OP] [2026-04-18 13:00] [P1] **CopilotKit-T05** 创建并启动前端服务：
+  写入 `~/.config/systemd/user/agi-frontend.service`（WorkingDirectory=/mnt/ai/apps/agi-control-plane/frontend，ExecStart=/mnt/ai/cache/bun/bin/bun run dev --port 3000），enable + start，验证 `curl http://localhost:3000`
+
+## P1 — 系统运维
+
+- [ ] [CC→OP] [2026-04-18 13:00] [P1] **成本审计修复** LiteLLM/Ollama：
+  1. `docker logs litellm --tail 50 | grep -i error`
+  2. 如有错误 → `docker restart litellm`
+  3. `curl -sf http://localhost:4000/health` 验证
+  4. `systemctl --user start ollama 2>/dev/null || docker start ollama 2>/dev/null`
+  5. 结果写 `/tmp/cost-audit-fix-$(date +%Y%m%d).md`
+
+- [ ] [CC→OP] [2026-04-18 13:00] [P1] **chronos-subconscious 降频** 修改 timer：`OnUnitActiveSec=20min` → `OnUnitActiveSec=1h`，同时在 ExecStart 脚本中加检查 `[ $(awk '{print int($1)}' /proc/loadavg) -gt 4 ] && exit 0`（CPU 高负载跳过）
+
+- [ ] [CC→OP] [2026-04-18 13:00] [P1] **Paperclip 空壳 agent 归档** 检查 Paperclip API（port 3100），列出所有 agent，停止心跳为 0 且 status=idle 超 7 天的 agent（最多 6 个），写结果到 `/tmp/paperclip-cleanup-$(date +%Y%m%d).json`
+
+## P2 — 监控补全
+
+- [ ] [CC→OP] [2026-04-18 13:00] [P2] **Docker 容器监控补全** 为以下容器添加 healthcheck 巡检（追加到 service-nurse OpenCode job）：nocodb、twenty-server、twenty-worker、n8n、deepwiki。检查方式：`docker inspect --format='{{.State.Health.Status}}' <name>`，异常则写 `/tmp/docker-health-$(date +%Y%m%d).md`
+
+- [ ] [CC→OP] [2026-04-18 13:00] [P2] **元监控（监工监工者）** 创建 `~/.local/bin/meta-monitor.sh`：检查以下 timers 是否 active + 最近触发时间 < 阈值×2（超时则写告警到 `/tmp/meta-monitor-alert.md`）：system-health-monitor / letta-health-guard / mihomo-guardian / cc-task-auditor / opencode-job-*-security-watchdog / opencode-job-*-proxy-guardian / opencode-job-*-heartbeat-task-check。创建对应 timer，每 4h 运行一次
+
+- [ ] [CC→OP] [2026-04-18 13:00] [P2] **op-tasks 已完成归档** 将 op-tasks.md 中所有 [x] 超过 24h 的条目移至 `op-tasks-archive-$(date +%Y%m).md`，保持活跃文件精简。每日 02:00 自动执行（创建 systemd timer）
+
+## 执行规则（MUST）
+- 每个任务完成后 MUST 将 `[ ]` 改为 `[x]` 并附上时间戳和结果摘要
+- 失败超过 2 次 MUST 改为 `[!]` 并写明失败原因，流转回 CC
+- 执行前先 grep 是否有重复任务（IDLE_GUARD）
+- 结果文件统一写到 `~/Desktop/巡检报告/` 或 `/tmp/`，不要只输出到终端
+- [ ] [AGI→OP] [2026-04-18 13:01] [high] 启动 Charlie Hub (Caddy) 服务以恢复总控 UI 和反向代理功能
+- [ ] [AGI→OP] [2026-04-18 13:01] [medium] 检查 Letta 服务停止原因并决定是否需要重启
