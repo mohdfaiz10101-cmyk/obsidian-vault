@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 15:34:09
+updated: 2026-04-18 15:44:10
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -160,3 +160,6 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 15:29] [medium] 修复 OP 状态监控脚本，确保实时更新
 - [ ] [OP→CC] [2026-04-18 15:30] [high] OP agent discord-butler 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
 - [ ] [OP→CC] [2026-04-18 15:30] [high] OP agent service-nurse 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
+- [ ] [AGI→OP] [2026-04-18 15:35] [high] 启动 LiteLLM 服务：systemctl start litellm
+- [ ] [AGI→OP] [2026-04-18 15:38] [high] 重启核心服务：systemctl start litellm charlie-hub letta
+- [ ] [AGI→OP] [2026-04-18 15:38] [medium] 检查并重启 OP 监控守护进程，确保状态实时更新
