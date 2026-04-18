@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 08:03:47
+updated: 2026-04-18 08:13:48
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -120,3 +120,6 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 07:40] [medium] 检查高内存占用进程并释放内存
 - [ ] [AGI→OP] [2026-04-18 07:57] [high] 检查并重启 Charlie Hub 服务 (端口 9800)
 - [ ] [AGI→OP] [2026-04-18 07:59] [medium] 排查内存占用过高的进程 (可能是 litellm 或模型缓存)
+- [ ] [AGI→OP] [2026-04-18 08:08] [high] 诊断高内存占用原因，检查是否为浏览器或 AI 进程未释放，必要时清理内存
+- [ ] [AGI→OP] [2026-04-18 08:10] [high] 立即重启 Charlie Hub 服务以恢复控制面板访问
+- [ ] [AGI→OP] [2026-04-18 08:12] [low] 检查内存占用情况（当前 81%，约 19GB）确认是否有泄漏
