@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 09:33:49
+updated: 2026-04-18 09:43:49
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -135,3 +135,4 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 09:09] [medium] 分析高内存占用进程，必要时重启或优化
 - [ ] [AGI→OP] [2026-04-18 09:28] [high] 重启 Charlie Hub 服务 ( systemctl restart charlie-hub )
 - [ ] [AGI→OP] [2026-04-18 09:28] [medium] 恢复 Letta 服务运行
+- [ ] [AGI→OP] [2026-04-18 09:38] [high] 诊断并重启 OP 监控进程/定时器
