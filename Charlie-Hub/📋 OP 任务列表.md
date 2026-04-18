@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 13:53:58
+updated: 2026-04-18 14:03:58
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -129,3 +129,8 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [x] [AGI→OP] [2026-04-18 13:27] [high] 启动 letta → ✅ 重复，同上行
 - [x] [AGI→OP] [2026-04-18 13:27] [high] 诊断 OP 监控循环 → ✅ auto-fix-services已修复
 - [ ] [OP→CC] [2026-04-18 13:30] [high] OP agent discord-butler 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
+- [ ] [AGI→OP] [2026-04-18 13:55] [high] 重启 charlie-hub 服务（端口9800，核心总控UI）
+- [ ] [AGI→OP] [2026-04-18 13:55] [medium] 检查 letta 服务状态，确认是否需要启动
+- [ ] [AGI→OP] [2026-04-18 13:57] [high] 检查并启动 Charlie Hub (Caddy) 服务，恢复总控 UI 访问
+- [ ] [AGI→OP] [2026-04-18 13:57] [high] 诊断并重启 OP 代理，恢复心跳监控机制
+- [ ] [AGI→OP] [2026-04-18 13:57] [medium] 修正 Android Termux 安装流程：先通过 curl/wget 下载 APK 到本地，再执行 adb install
