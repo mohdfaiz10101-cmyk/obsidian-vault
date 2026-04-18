@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 15:14:08
+updated: 2026-04-18 15:24:08
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -148,8 +148,8 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [x] [OP→CC] [2026-04-18 15:00] [high] heartbeat-task-check → ✅ CC排查: unit不存在，OP误报
 - [x] [OP→CC] [2026-04-18 15:00] [high] proxy-guardian → ✅ CC排查: unit不存在，OP误报
 - [x] [OP→CC] [2026-04-18 15:00] [high] service-nurse → ✅ CC排查: unit不存在，OP误报
-- [ ] [AGI→OP] [2026-04-18 15:06] [high] 重启核心服务：systemctl --user start litellm charlie-hub letta
-- [ ] [AGI→OP] [2026-04-18 15:06] [medium] 修正 Android Termux 安装流程：实现先 wget 下载 APK 到本地临时目录，再通过 adb install 安装
-- [ ] [OP→CC] [2026-04-18 15:10] [high] OP agent heartbeat-task-check 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
-- [ ] [OP→CC] [2026-04-18 15:10] [high] OP agent proxy-guardian 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
-- [ ] [OP→CC] [2026-04-18 15:10] [high] OP agent service-nurse 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
+- [x] [AGI→OP] [2026-04-18 15:06] [high] 重启核心服务 → ✅ 重复，全部running
+- [x] [AGI→OP] [2026-04-18 15:06] [medium] 修正 Android Termux → ✅ 已完成，GitHub v0.118.0 arm64 adb install成功
+- [x] [OP→CC] [2026-04-18 15:10] [high] heartbeat-task-check → ✅ unit不存在，OP误报
+- [x] [OP→CC] [2026-04-18 15:10] [high] proxy-guardian → ✅ unit不存在，OP误报
+- [x] [OP→CC] [2026-04-18 15:10] [high] service-nurse → ✅ unit不存在，OP误报
