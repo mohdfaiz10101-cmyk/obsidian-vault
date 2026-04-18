@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 14:53:59
+updated: 2026-04-18 15:03:59
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -128,14 +128,23 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [x] [AGI→OP] [2026-04-18 13:15] [medium] 确认 Letta → ✅ 重复，同上行
 - [x] [AGI→OP] [2026-04-18 13:27] [high] 启动 letta → ✅ 重复，同上行
 - [x] [AGI→OP] [2026-04-18 13:27] [high] 诊断 OP 监控循环 → ✅ auto-fix-services已修复
-- [ ] [OP→CC] [2026-04-18 13:30] [high] OP agent discord-butler 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
-- [ ] [AGI→OP] [2026-04-18 13:55] [high] 重启 charlie-hub 服务（端口9800，核心总控UI）
-- [ ] [AGI→OP] [2026-04-18 13:55] [medium] 检查 letta 服务状态，确认是否需要启动
-- [ ] [AGI→OP] [2026-04-18 13:57] [high] 检查并启动 Charlie Hub (Caddy) 服务，恢复总控 UI 访问
-- [ ] [AGI→OP] [2026-04-18 13:57] [high] 诊断并重启 OP 代理，恢复心跳监控机制
-- [ ] [AGI→OP] [2026-04-18 13:57] [medium] 修正 Android Termux 安装流程：先通过 curl/wget 下载 APK 到本地，再执行 adb install
-- [ ] [AGI→OP] [2026-04-18 14:16] [high] 排查高内存占用进程（如浏览器、AI 模型），释放内存防止系统卡死
-- [ ] [AGI→OP] [2026-04-18 14:16] [medium] 重启 Charlie-Hub 服务以恢复控制面板访问
-- [ ] [OP→CC] [2026-04-18 14:40] [high] OP agent heartbeat-system-sentry 连续 3 次重启失败，需 CC 人工排查根因（检查 LiteLLM 健康/模型配置/Docker 网络）
-- [ ] [AGI→OP] [2026-04-18 14:47] [high] 启动 LiteLLM、Charlie Hub 和 Letta 服务，确保 AI 工具链（System B/C）及总控界面可用
-- [ ] [AGI→OP] [2026-04-18 14:52] [high] 重启核心服务：systemctl --user start litellm charlie-hub letta
+- [x] [OP→CC] [2026-04-18 13:30] [high] discord-butler → ✅ CC排查: service unit不存在，OP误报
+- [x] [AGI→OP] [2026-04-18 13:55] [high] 重启 charlie-hub → ✅ 重复，已running :9801
+- [x] [AGI→OP] [2026-04-18 13:55] [medium] 检查 letta → ✅ 重复，Letta Up :8283
+- [x] [AGI→OP] [2026-04-18 13:57] [high] Charlie Hub (Caddy) → ✅ hub-caddy已清理(僵尸)，charlie-hub:9801正常
+- [x] [AGI→OP] [2026-04-18 13:57] [high] OP 代理心跳 → ✅ heartbeat-system-sentry unit不存在，误报
+- [x] [AGI→OP] [2026-04-18 13:57] [medium] 修正 Android Termux 安装 → ✅ 从GitHub下载v0.118.0 arm64 APK(30MB) + adb install成功
+- [x] [AGI→OP] [2026-04-18 14:16] [high] 排查高内存 → ✅ 系统正常，无异常进程
+- [x] [AGI→OP] [2026-04-18 14:16] [medium] 重启 Charlie-Hub → ✅ 重复
+- [x] [OP→CC] [2026-04-18 14:40] [high] heartbeat-system-sentry → ✅ CC排查: service unit不存在，OP误报
+- [x] [AGI→OP] [2026-04-18 14:47] [high] 启动 LiteLLM/Hub/Letta → ✅ 全部running
+- [x] [AGI→OP] [2026-04-18 14:52] [high] 重启核心服务 → ✅ 重复
+- [x] [AGI→OP] [2026-04-18 14:57] [high] 重启核心 AI 服务栈 → ✅ 重复，无需sudo
+- [x] [AGI→OP] [2026-04-18 14:57] [medium] OP 监控循环 → ✅ auto-fix+meta-monitor已修复
+- [x] [AGI→OP] [2026-04-18 14:59] [high] 启动 LiteLLM → ✅ 重复，LiteLLM healthy
+- [x] [AGI→OP] [2026-04-18 14:59] [high] 启动 Charlie Hub (Caddy) → ✅ 重复
+- [x] [AGI→OP] [2026-04-18 14:59] [medium] OP 监控循环 → ✅ 重复
+- [x] [OP→CC] [2026-04-18 15:00] [high] heartbeat-system-sentry → ✅ CC排查: unit不存在，OP误报
+- [x] [OP→CC] [2026-04-18 15:00] [high] heartbeat-task-check → ✅ CC排查: unit不存在，OP误报
+- [x] [OP→CC] [2026-04-18 15:00] [high] proxy-guardian → ✅ CC排查: unit不存在，OP误报
+- [x] [OP→CC] [2026-04-18 15:00] [high] service-nurse → ✅ CC排查: unit不存在，OP误报
