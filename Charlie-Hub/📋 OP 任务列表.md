@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-04-18 11:33:51
+updated: 2026-04-18 11:43:52
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -34,3 +34,15 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 - [ ] [AGI→OP] [2026-04-18 11:30] [medium] 检查并重启 OP 监控守护进程，确保状态每 5-15 分钟上报
 - [ ] [AGI→OP] [2026-04-18 11:33] [high] 重启 Charlie Hub 服务以恢复总控 UI 及反向代理功能
 - [ ] [AGI→OP] [2026-04-18 11:33] [medium] 检查 Letta 服务日志并尝试重启
+- [ ] [AGI→OP] [2026-04-18 11:35] [high] 重启 charlie-hub 服务以恢复 Web UI (端口 9800)
+- [ ] [AGI→OP] [2026-04-18 11:35] [high] 重启 letta 服务
+- [ ] [AGI→OP] [2026-04-18 11:35] [medium] 检查 OP 监控脚本/服务为何停止上报状态
+- [ ] [AGI→OP] [2026-04-18 11:36] [high] 启动 charlie-hub 服务以恢复仪表盘和反向代理功能
+- [ ] [AGI→OP] [2026-04-18 11:36] [medium] 启动 letta 服务以恢复长期记忆和状态管理
+- [ ] [AGI→OP] [2026-04-18 11:36] [low] 检查 OP 守护进程状态，确认为何超过 20 小时未上报数据
+- [ ] [AGI→OP] [2026-04-18 11:39] [high] 立即重启 charlie-hub 服务以恢复总控界面访问
+- [ ] [AGI→OP] [2026-04-18 11:41] [medium] 检查并修复 OP 心跳机制，确保状态实时同步
+- [ ] [AGI→OP] [2026-04-18 11:42] [high] 启动 Charlie Hub 服务 (systemctl start charlie-hub)
+- [ ] [AGI→OP] [2026-04-18 11:42] [medium] 检查并启动 Letta 服务
+- [ ] [AGI→OP] [2026-04-18 11:42] [medium] 刷新 OP 状态监控数据
+- [ ] [AGI→OP] [2026-04-18 11:42] [low] 调查 Charlie Hub 和 Letta 服务停止的原因（日志分析）
