@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-05-19 18:38:51
+updated: 2026-05-19 18:43:51
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -62,3 +62,6 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 
 
 - [ ] [OP] [2026-05-19 18:30] 任务跟进：检查 op-tasks.md 未完成任务进展，更新状态或标记 DECAY
+
+
+- [ ] [OP] [2026-05-19 18:40] 任务跟进：检查 op-tasks.md 未完成任务进展，更新状态或标记 DECAY
