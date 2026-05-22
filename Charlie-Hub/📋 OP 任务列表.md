@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-05-21 12:12:29
+updated: 2026-05-22 09:55:52
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -37,13 +37,11 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 
 ### 2026-05-21
 
-- [x] [完成 2026-05-21] Service-Nurse巡检 ✅
   - Docker: 5容器运行中（letta-chromadb unhealthy）
   - 磁盘: `/` 85% | `/mnt/ai` 30% | `/mnt/data` 80%
   - 端口: 3000/4000/4001/8000/8283/9900/9800/9977/7699/7890/7891 监听中
   - 8290-8299 未监听（预留/已停止服务）
 
-- [x] [完成 2026-05-21] NixOS防火墙永久开放18092 ✅
   - frp.nix:107 已包含 18092 在 allowedTCPPorts
   - [!] 需 sudo nixos-rebuild switch 激活，当前无法执行（权限限制）
 
@@ -60,229 +58,34 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ## 执行规则
 新任务应从DECAY列表中按需复活，不要盲目重试。优先级由Charlie确认。
 
-- [x] [完成 2026-05-21] Service-Nurse巡检 ✅
   - Docker: 5容器运行中（letta-chromadb unhealthy）
   - 磁盘: `/` 85% | `/mnt/ai` 30% | `/mnt/data` 80%
   - 端口: 3000/4000/4001/8000/8283/9900/9800/9977/7699/7890/7891 监听中
   - 8290-8299 未监听（预留/已停止服务）
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - [2026-05-19 22:37] [GLM] GLM API 不可用 → 已 fallback 到 Step
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 - [2026-05-20 20:05] [GLM] GLM API 不可用 → 已 fallback 到 Step
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 - [2026-05-20 22:30] [GLM] GLM API 不可用 → 已 fallback 到 Step
 
-- [x] [完成 2026-05-21] NixOS防火墙永久开放18092 ✅
   - frp.nix:107 已包含 18092 在 allowedTCPPorts
   - [!] 需 sudo nixos-rebuild switch 激活，当前无法执行（权限限制）
 
-- [ ] [OP] [2026-05-21 10:49] Service-Nurse巡检：Docker容器状态+systemd服务+磁盘空间+关键端口可达性
 
 
-- [ ] [OP] [2026-05-21 10:50] 任务跟进：检查 op-tasks.md 未完成任务进展，更新状态或标记 DECAY
-
-
-- [ ] [OP] [2026-05-21 11:00] 任务跟进：检查 op-tasks.md 未完成任务进展，更新状态或标记 DECAY
 - [2026-05-21 11:00] [GLM] GLM API 不可用 → 已 fallback 到 Step
 
 
-- [ ] [OP] [2026-05-21 11:10] 任务跟进：检查 op-tasks.md 未完成任务进展，更新状态或标记 DECAY
 
 
-- [ ] [OP] [2026-05-21 11:20] 任务跟进：检查 op-tasks.md 未完成任务进展，更新状态或标记 DECAY
 
 
-- [ ] [OP] [2026-05-21 11:30] 任务跟进：检查 op-tasks.md 未完成任务进展，更新状态或标记 DECAY
 
 
-- [ ] [OP] [2026-05-21 11:40] 任务跟进：检查 op-tasks.md 未完成任务进展，更新状态或标记 DECAY
+
+  - opencode-autoupgrade: GitHub下载超时 → 移除SOCKS5代理，下载正常(47M/32s)
+  - opencode-session-guard: dry-run显示0损坏session，问题已自行恢复
+  - 升级脚本增强: 强制杀进程+3次重试复制，解决"文本文件忙"
 
 
-- [ ] [OP] [2026-05-21 11:50] 任务跟进：检查 op-tasks.md 未完成任务进展，更新状态或标记 DECAY
-
-
-- [ ] [OP] [2026-05-21 12:00] 任务跟进：检查 op-tasks.md 未完成任务进展，更新状态或标记 DECAY
-
-
-- [ ] [OP] [2026-05-21 12:10] 任务跟进：检查 op-tasks.md 未完成任务进展，更新状态或标记 DECAY
