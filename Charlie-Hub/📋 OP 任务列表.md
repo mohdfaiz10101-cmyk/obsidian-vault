@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-05-22 09:55:52
+updated: 2026-05-23 09:57:43
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -89,3 +89,10 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
   - 升级脚本增强: 强制杀进程+3次重试复制，解决"文本文件忙"
 
 
+
+### [SELF-IMPROVE 2026-05-22] GLM 自动代码审查
+- [x] [SELF-IMPROVE] brain.py: 语法验证通过(976行)，文件完整未截断 — 误报
+- [x] [SELF-IMPROVE] think.py: 语法验证通过(421行)，文件完整未截断 — 误报
+- [x] [SELF-IMPROVE] kanban.html: 101KB完整(</html>闭合)，CSS未截断 — 误报
+- [x] [SELF-IMPROVE] launcher-server.py: 已修复 — 20行`ipaddress.ip_network("100.64.0.0/10")` + 41行`ip_address in TAILSCALE_NET`，CIDR校验正确
+- [x] [完成 2026-05-23 02:15] [SELF-IMPROVE] hub-api.py: 全局db配置+文件IO耦合 — 抽取到hub_config.py HubConfig类
