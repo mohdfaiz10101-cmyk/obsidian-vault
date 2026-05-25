@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-05-23 09:57:43
+updated: 2026-05-25 09:47:46
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
@@ -42,8 +42,7 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
   - 端口: 3000/4000/4001/8000/8283/9900/9800/9977/7699/7890/7891 监听中
   - 8290-8299 未监听（预留/已停止服务）
 
-  - frp.nix:107 已包含 18092 在 allowedTCPPorts
-  - [!] 需 sudo nixos-rebuild switch 激活，当前无法执行（权限限制）
+  - [x] [2026-05-24] 18092已激活+已改用18093 — 无需nixos-rebuild
 
 ### 2026-05-19
 
@@ -69,8 +68,7 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 
 - [2026-05-20 22:30] [GLM] GLM API 不可用 → 已 fallback 到 Step
 
-  - frp.nix:107 已包含 18092 在 allowedTCPPorts
-  - [!] 需 sudo nixos-rebuild switch 激活，当前无法执行（权限限制）
+  - [x] [2026-05-24] 18092已激活+已改用18093 — 无需nixos-rebuild
 
 
 
@@ -91,8 +89,21 @@ source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 
 
 ### [SELF-IMPROVE 2026-05-22] GLM 自动代码审查
-- [x] [SELF-IMPROVE] brain.py: 语法验证通过(976行)，文件完整未截断 — 误报
-- [x] [SELF-IMPROVE] think.py: 语法验证通过(421行)，文件完整未截断 — 误报
-- [x] [SELF-IMPROVE] kanban.html: 101KB完整(</html>闭合)，CSS未截断 — 误报
-- [x] [SELF-IMPROVE] launcher-server.py: 已修复 — 20行`ipaddress.ip_network("100.64.0.0/10")` + 41行`ip_address in TAILSCALE_NET`，CIDR校验正确
-- [x] [完成 2026-05-23 02:15] [SELF-IMPROVE] hub-api.py: 全局db配置+文件IO耦合 — 抽取到hub_config.py HubConfig类
+
+### [SELF-IMPROVE 2026-05-23] GLM 自动代码审查
+- [ ] [SELF-IMPROVE] brain.py: 修复文件末尾的语法截断错误（补全 `TRIGGER_FI` 等未写完的代码）。
+- [ ] [SELF-IMPROVE] think.py: `_letta_recall` 函数缺少右括号和 `return` 语句导致语法截断不完整。
+- [ ] [SELF-IMPROVE] kanban.html: 代码在 `.wip-bar` 样式定义处被意外截断，需要补全缺失的样式代码并确保HTML结构和JS逻辑完整闭合。
+- [ ] [SELF-IMPROVE] launcher-server.py: 命令启动逻辑中未对传入参数进行严格的白名单校验，存在严重的命令注入风险，应仅允许预定义的安全命令而非直接拼接执行。
+- [ ] [SELF-IMPROVE] hub-api.py: 将数据库查询逻辑及全局变量（如`_ws_clients`、`REPLY_QUEUE`）重构为独立的依赖注入服务或类模块，以降低路由函数的耦合度并提升代码的可测试性与可维护性。
+- [ ] 测试TTS：验证语音播报功能是否正常工作
+- [ ] 快速测试：echo hello
+- [ ] 快速TTS测试：验证spd-say语音播报
+
+## TTS 测试任务
+
+- [ ] TTS-TEST-001 — 测试TTS播报：执行echo "TTS测试成功"并验证spd-say播报
+# test 1779638866
+# test 1779639005
+# test2 1779639080
+- [ ] [OP] [2026-05-25 00:53] AI配置告警(自愈失败): 🔴 AGENTS.md 处理后仍缺: FALSE_POSITIVE_GUARD 只能由 CC dev.*模式
