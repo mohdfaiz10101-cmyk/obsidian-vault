@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-05-25 09:47:46
+updated: 2026-06-01 15:01:32
 source: /home/charlie/.claude/projects/-home-charlie/memory/app-dev-journal.md
 ---
 
