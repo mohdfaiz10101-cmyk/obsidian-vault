@@ -2,17 +2,15 @@
 type: letta-memory
 agent: opus-analyst
 agent_name: 🧠 分析专家
-synced_at: 2026-06-01T16:21:19.793418
+synced_at: 2026-06-01T17:21:19.788883
 tags: [letta, opus-analyst, memory]
 ---
 
 # 🧠 分析专家 - 记忆同步
 
 ## 最后更新
-2026-06-01T16:21:19.793418
+2026-06-01T17:21:19.788883
 
 ## Core Memory
 
-
-## Archival Memory
-
+❌ 错误: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
