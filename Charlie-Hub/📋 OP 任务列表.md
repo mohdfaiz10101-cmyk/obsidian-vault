@@ -1,10 +1,10 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-06-01 15:46:36
+updated: 2026-06-01 15:51:37
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
-- [ ] [CC→OP] [2026-05-29 10:55] 修复19890公网访问：NAT层故障(WAN端口不可达)，DuckDNS IP频繁切换(195.245.219.15↔238)，connectivity-chain-watchdog连续37次失败。需诊断路由器端口转发+运营商限制。
+- [x] [完成 2026-06-01 15:50] [CC→OP] 19890公网访问：FRP已恢复(旧进程占用7500端口已清理)，DuckDNS已更新(185.37.253.247)，FRP代理nixos-opencode-web在线(19890→7700 ttyd opencode)，外网访问已验证OK
 - [x] [完成 2026-06-01 15:41] [CC→OP] 创建~/.local/state/op-status.json — 124行，含服务/磁盘/端口/Docker四维状态
 
 # OP 待办任务
