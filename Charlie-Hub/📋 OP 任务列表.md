@@ -1,6 +1,6 @@
 ---
 tags: [charlie-hub, auto-sync]
-updated: 2026-06-02 00:57:18
+updated: 2026-06-02 01:02:18
 source: /home/charlie/.claude/projects/-home-charlie/memory/op-tasks.md
 ---
 
